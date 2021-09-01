@@ -1,0 +1,15 @@
+name: 'Pleasant Street Music Studio'
+mail: byrdene@gmail.com
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+mail_notification: ''
+_core:
+  default_config_hash: IHpWWIkDQSprhgjf0eggbMD_Jg3fiN7Mr5qlHUalmkY
+uuid: 8a7f8bdb-8581-4466-840e-59d53cdd59e8
