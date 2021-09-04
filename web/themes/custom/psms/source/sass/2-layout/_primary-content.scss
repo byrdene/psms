@@ -1,0 +1,159 @@
+// ==========================================================================
+//   PRIMARY-CONTENT (CONTENT and BOTH SIDEBARS)
+// ==========================================================================
+
+#primary-content {
+  //margin: $gutter 0; // add this at a different place if it is needed
+  margin: 0;
+  @include clearfix;
+  .container {
+    @include center-block;
+    max-width: $page-width;
+  }
+}
+
+body.no-sidebar.page-node { // only node pages
+  #primary-content {
+    .container { // allow max-width to be controlled by components
+      max-width: none;
+      #content {
+        width: 100%;
+        .region {
+          padding: 0; // allow padding to be controlled by components
+          .field--name-field-components {
+            > .section {
+              //// x-small content-width
+              //> .section.x-small-width {
+              //  .paragraph-wrapper {
+              //    @include center-block;
+              //    max-width: $body-width;
+              //    padding: 0 $gutter;
+              //    @include bp(medium, up) {
+              //      padding: 0 $gutter*2;
+              //    }
+              //  }
+              //}
+              //// small content-width
+              //> .section.small-width {
+              //  .paragraph-wrapper {
+              //    @include center-block;
+              //    max-width: $content-width;
+              //    padding: 0 $gutter;
+              //    @include bp(medium, up) {
+              //      padding: 0 $gutter*2;
+              //    }
+              //  }
+              //}
+              //// medium page-width
+              //> .section.medium-width {
+              //  .paragraph-wrapper {
+              //    @include center-block;
+              //    max-width: $page-width;
+              //    padding: 0 $gutter;
+              //    @include bp(medium, up) {
+              //      padding: 0 $gutter*2;
+              //    }
+              //  }
+              //}
+              //// some parts of full width components should have constrained widths
+              //> .section.full-width {
+              //  // x-small content-width
+              //  .constrained-x-small {
+              //    @include center-block;
+              //    max-width: $body-width;
+              //    padding: 0 $gutter;
+              //    @include bp(medium, up) {
+              //      padding: 0 $gutter;
+              //    }
+              //  }
+              //  // small content-width
+              //  .constrained-small {
+              //    @include center-block;
+              //    max-width: $content-width;
+              //    padding: 0 $gutter;
+              //    @include bp(medium, up) {
+              //      padding: 0 $gutter*2;
+              //    }
+              //  }
+              //  // medium page-width
+              //  .constrained-medium {
+              //    @include center-block;
+              //    max-width: $page-width;
+              //    padding: 0 $gutter;
+              //    @include bp(medium, up) {
+              //      padding: 0 $gutter*2;
+              //    }
+              //  }
+              //}
+            }
+          }
+          .field--name-field-related-view { // by default, set width to page but change per project as necessary
+            @include center-block;
+            max-width: $page-width;
+            padding: 0 $gutter;
+            @include bp(medium, up) {
+              padding: 0 $gutter*2;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+body.two-sidebars {
+  #content,
+  #sidebar-first,
+  #sidebar-second {
+    width: 100%;
+    float: left;
+  }
+  @include bp($both-sidebars, up) {
+    #content {
+      width: $both-sidebars-content-width;
+      margin-left: $both-sidebars-first-width;
+    }
+    #sidebar-first {
+      width: $both-sidebars-first-width;
+      margin-left: -($both-sidebars-content-width + $both-sidebars-first-width);
+    }
+    #sidebar-second {
+      width: $both-sidebars-second-width;
+    }
+  }
+}
+
+body.sidebar-first {
+  #content,
+  #sidebar-first {
+    width: 100%;
+    float: left;
+  }
+  @include bp($sidebar, up) {
+    #content {
+      width: $first-sidebar-content-width;
+      margin-left: $first-sidebar-width;
+    }
+    #sidebar-first {
+      width: $first-sidebar-width;
+      margin-left: -($first-sidebar-content-width + $first-sidebar-width);
+    }
+  }
+}
+
+body.sidebar-second {
+  #content,
+  #sidebar-second {
+    width: 100%;
+    float: left;
+  }
+  @include bp($sidebar, up) {
+    #content {
+      width: $second-sidebar-content-width;
+    }
+    #sidebar-second {
+      width: $second-sidebar-width;
+      float: right;
+    }
+  }
+}

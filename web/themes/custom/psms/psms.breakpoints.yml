@@ -1,0 +1,57 @@
+psms.embedded.mobile:
+  label: mobile
+  mediaQuery: '(min-width: 0px)'
+  weight: 0
+  multipliers:
+   - 1x
+  group: psms.embedded
+psms.embedded.narrow:
+  label: narrow
+  mediaQuery: '(min-width: 768px)'
+  weight: 1
+  multipliers:
+    - 1x
+  group: psms.embedded
+psms.embedded.wide:
+  label: wide
+  mediaQuery: '(min-width: 1200px)'
+  weight: 2
+  multipliers:
+    - 1x
+  group: psms.embedded
+psms.embedded.xwide:
+  label: extra wide
+  mediaQuery: '(min-width: 1824px)'
+  weight: 2
+  multipliers:
+    - 1x
+  group: psms.embedded
+
+psms.landscape.mobile:
+  label: mobile
+  mediaQuery: '(min-width: 0px)'
+  weight: 0
+  multipliers:
+    - 1x
+  group: psms.landscape
+psms.landscape.narrow:
+  label: narrow
+  mediaQuery: '(min-width: 768px)'
+  weight: 1
+  multipliers:
+    - 1x
+  group: psms.landscape
+psms.landscape.wide:
+  label: wide
+  mediaQuery: '(min-width: 1200px)'
+  weight: 2
+  multipliers:
+    - 1x
+  group: psms.landscape
+psms.landscape.xwide:
+  label: extra wide
+  mediaQuery: '(min-width: 1824px)'
+  weight: 2
+  multipliers:
+    - 1x
+  group: psms.landscape

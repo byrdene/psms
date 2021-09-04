@@ -1,0 +1,114 @@
+{% set main_menu = page.primary_menu|render %}
+{% set secondary_menu = page.secondary_menu|render %}
+<div{{ attributes.addClass(
+'layout-container',
+main_menu or secondary_menu ? 'with-navigation',
+secondary_menu ? 'with-subnav'
+) }}>
+
+    <!-- HEADER -->
+    <header>
+        <div id="site-header">
+            <div class="container">
+
+                {% if page.header %}
+                    {{ page.header }}
+                {% endif %}
+
+                {% if page.navigation_secondary %}
+                  {{ page.navigation_secondary }}
+                {% endif %}
+
+                {% if page.navigation_primary %}
+                    {{ page.navigation_primary }}
+                {% endif %}
+
+                {% if is_front %}
+                    <h1 class="visually-hidden">Homepage</h1>
+                {% endif %}
+
+            </div>
+        </div><!-- /#site-header -->
+    </header>
+
+  <!-- MAIN PAGE CONTENT -->
+  <main id="main-content" tabindex="-1">
+  <!-- Banner -->
+  {% if page.banner %}
+    <section id="page-banner">
+      <div class="container">
+        {{ page.banner }}
+      </div>
+    </section><!-- /#page-banner -->
+  {% endif %}
+
+    <!-- PRE-CONTENT -->
+    {% if page.pre_content %}
+    <div id="pre-content">
+        <div class="container">
+            {{ page.pre_content }}
+        </div><!-- /.container -->
+    </div><!-- /#pre-content -->
+    {% endif %}
+
+    <!-- PRIMARY-CONTENT -->
+    <div id="primary-content">
+        <div class="container">
+
+            <div id="content">
+                {{ page.content }}
+            </div><!-- /#content -->
+
+            {% if page.sidebar_first|render %}
+                <aside id="sidebar-first" class="column sidebar first" role="complementary">
+                    {{ page.sidebar_first }}
+                </aside><!-- /#sidebar-first -->
+            {% endif %}
+
+            {% if page.sidebar_second|render %}
+                <aside id="sidebar-second" class="column sidebar second" role="complementary">
+                    {{ page.sidebar_second }}
+                </aside><!-- /#sidebar-second -->
+            {% endif %}
+
+
+        </div><!-- /.container -->
+    </div><!-- /#primary-content -->
+
+    <!-- POST-CONTENT -->
+    {% if page.post_content|render %}
+    <div id="post-content">
+        <div class="container">
+            {{ page.post_content }}
+        </div><!-- /.container -->
+    </div><!-- /#post-content -->
+    {% endif %}
+
+  </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+
+            {% if page.footer_first %}
+                <div id="footer-first">
+                    {{ page.footer_first }}
+                </div><!-- /#footer-first -->
+            {% endif %}
+
+            {% if page.footer_second %}
+                <div id="footer-second">
+                    {{ page.footer_second }}
+                </div><!-- /#footer-second -->
+            {% endif %}
+
+            {% if page.footer_third %}
+                <div id="footer-third">
+                    {{ page.footer_third }}
+                </div><!-- /#footer-second -->
+            {% endif %}
+
+        </div><!-- /.container -->
+    </footer>
+
+</div><!-- /.layout-container -->

@@ -1,0 +1,20 @@
+uuid: 390369bc-bc10-4634-9ce9-d8a3a3f0ac5c
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+_core:
+  default_config_hash: 0G-_BUZv8dauTIp-NAm1sNtocvyl87iuiEsLSn1C_bI
+name: Page
+type: page
+description: ''
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

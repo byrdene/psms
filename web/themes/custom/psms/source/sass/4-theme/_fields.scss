@@ -1,0 +1,29 @@
+// ==========================================================================
+//   FIELDS
+// ==========================================================================
+
+.field {
+  @include clearfix;
+}
+
+.field__label {
+  @extend %label;
+  &.is-inline {
+    display: inline-block;
+    clear: both;
+    float: left;
+    & + .field__item {
+      display: inline-block;
+      float: left;
+    }
+  }
+}
+
+.field--name-field-publication-date,
+.field--name-field-byline,
+.field--name-field-title, // professional title in bio nodes
+.field--name-bundle-fieldnode,
+.field--name-field-event-date,
+.field--name-dynamic-token-fieldnode-start-time-only {
+  @extend %label;
+}

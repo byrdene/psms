@@ -1,0 +1,39 @@
+{% set extra_node_classes = [
+node.isSticky() ? 'node--sticky',
+not (node) and (node.isPublished()) ? 'node--unpublished',
+] %}
+{#
+/**
+ * @file
+ * Display Suite fluid 2 column template.
+ *
+ */
+#}
+
+{% set left = left|render %}
+{% set right = right|render %}
+
+{% if (left and not right) or (right and not left) %}
+  {% set layout_class = 'group-one-column' %}
+{% endif %}
+
+{# Do not render wrapper markup if no content exists! #}
+{% if (left) or (right) %}
+<{{ outer_wrapper }}{{ attributes.addClass(layout_class, extra_node_classes,'ds-2col-fluid', 'clearfix') }}>
+
+{#  {{ title_suffix.contextual_links }}#}
+
+  {% if left %}
+    <{{ left_wrapper }}{{ left_attributes.addClass('group-left') }}>
+      {{ left }}
+    </{{ left_wrapper }}>
+  {% endif %}
+
+  {% if right %}
+    <{{ right_wrapper }}{{ right_attributes.addClass('group-right') }}>
+      {{ right }}
+    </{{ right_wrapper }}>
+  {% endif %}
+
+</{{ outer_wrapper }}>
+{% endif %}

@@ -1,0 +1,103 @@
+// ==========================================================================
+//   REGIONS
+// ==========================================================================
+
+// Default gutter. Top & Bottom gutter most likely specific to region.
+.region {
+  @include clearfix;
+  padding: 0 $gutter;
+  @include bp(medium, up) {
+    padding: 0 $gutter*2;
+  }
+  > .wrapper {
+    @include clearfix;
+  }
+}
+
+.region-header {
+  position: relative;
+  padding: $gutter;
+  @include bp(medium, up) {
+    padding: $gutter $gutter*2;
+  }
+}
+
+.region-navigation-primary {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  padding: 0;
+  @include bp($main-nav, up) {
+    position: relative;
+    //top: auto;
+    //left: auto;
+    //right: auto;
+    float: left;
+    padding: 0 $gutter*2;
+    .wrapper {
+      position: relative;
+      background-color: $primary-color;
+    }
+  }
+}
+
+.region-navigation-secondary {
+  padding: 0;
+  @include bp(medium, up) {
+    padding: $gutter $gutter*2 $gutter 0;
+  }
+}
+
+.region-banner {
+  padding: $gutter;
+  @include bp(medium, up) {
+    padding: $gutter $gutter*2;
+  }
+}
+
+// Because Tabs & Messages are in this region, do not apply left|right gutters to the region.
+// Instead, apply these gutters on the blocks placed in the region.
+.region-pre-content {
+}
+
+//.region-content,
+//.region-sidebar-first,
+//.region-sidebar-second {
+//  padding: 0 $gutter $gutter $gutter;
+//}
+
+.region-content {
+  @include bp(medium, up) {
+    padding: 0 $gutter*2;
+  }
+}
+
+.region-sidebar-first {
+  @include bp(medium, up) {
+    padding-left: $gutter*2;
+  }
+}
+
+.region-sidebar-second {
+  @include bp(medium, up) {
+    padding: 0 $gutter*2;
+  }
+}
+
+.region-post-content {
+  padding: $gutter;
+  @include bp(medium, up) {
+    padding: $gutter $gutter*2;
+  }
+}
+
+.region-footer-first,
+.region-footer-second,
+.region-footer-third {
+  padding: $gutter;
+  @include bp(medium, up) {
+    padding: $gutter $gutter*2;
+  }
+}

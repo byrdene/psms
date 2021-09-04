@@ -106,9 +106,6 @@ install:
   - twig_tweak
   - view_mode_selector
   - viewfield
-  - webform
-  - webform_node
-  - webform_ui
   # Custom
   - project_admin
   - project_utilities

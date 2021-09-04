@@ -1,0 +1,60 @@
+// ==========================================================================
+//   RESPONSIVE DISPLAY SUITE GROUPS HELPERS
+// ==========================================================================
+
+
+//   Fluid 2 column style for Display Suite
+//   $image-container value can be left or right
+@mixin responsive-display-2col($width: 35%, $gutter: 2.5%, $image-container: left) {
+
+  .group-left,
+  .group-right {
+    float: left;
+  }
+
+  // If group-right contains the responsive image
+  @if $image-container == 'right' {
+    .group-left {
+      width: 100% - $width;
+    }
+
+    .group-right {
+      .field--type-image, .field--type-image * {
+        margin: 0;
+        width: 100%;
+        max-width: 100% !important;
+      }
+    }
+
+    .group-left + .group-right {
+      width: $width - $gutter;
+      margin-left: $gutter;
+      max-width: $width - $gutter;
+    }
+  }
+
+    // If group-left contains the responsive image
+  @else if $image-container == 'left' {
+    .group-left {
+      width: $width - $gutter;
+      margin-right: $gutter;
+      max-width: $width - $gutter;
+
+      .field--type-image, .field--type-image * {
+        margin: 0;
+        width: 100%;
+        max-width: 100% !important;
+      }
+    }
+
+    .group-left + .group-right {
+      width: 100% - $width;
+    }
+  }
+
+  &.group-one-column {
+    .group-left, .group-right {
+      width: 100%;
+    }
+  }
+}

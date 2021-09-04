@@ -1,0 +1,22 @@
+{% set extra_node_classes = [
+node.isSticky() ? 'node--sticky',
+not (node) and (node.isPublished()) ? 'node--unpublished',
+] %}
+{#
+/**
+ * @file
+ * Display Suite 1 column template.
+ *
+ */
+#}
+
+{# Do not render wrapper markup if no content exists! #}
+{% if ds_content|render %}
+<{{ ds_content_wrapper }}{{ attributes.addClass(extra_node_classes, 'ds-1col', 'clearfix') }}>
+
+{#  {{ title_suffix.contextual_links }}#}
+
+  {{ ds_content }}
+
+</{{ ds_content_wrapper }}>
+{% endif %}

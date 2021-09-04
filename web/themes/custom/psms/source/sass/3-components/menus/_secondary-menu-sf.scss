@@ -1,0 +1,217 @@
+//=============================================================================
+//   MAIN MENU (Superfish)
+//=============================================================================
+
+//**************** TOP LEVEL *************/
+
+$bgcolor:                transparent;
+
+// Top Level - Border
+$item-border-width:      0 1px 0 0;
+$item-border-style:       solid;
+$item-border-color:       $base-border-color;
+
+// Top Level -  Font
+$item-font-family:        $base-font-family;
+$item-font-weight:        bold;
+$item-text-transform:     uppercase;
+$item-text-align:         center;
+
+// Top Level -  Color
+$item-color:              $action-color;
+$item-color-hover:        $primary-color;
+$item-color-active:       $primary-color;
+
+// Top Level - Background Color
+$item-bgcolor:           transparent;
+$item-bgcolor-hover:     transparent;
+$item-bgcolor-active:    transparent;
+
+//**************** INNER LEVEL (drop down) *************/
+
+$inner-bgcolor:               transparent;
+
+// Inner Level - Border
+$inner-item-border-width :    1px 0 0 0;
+$inner-item-border-style:     solid;
+$inner-item-border-color:     $white;
+
+// Inner Level -  Font
+$inner-item-font-family:        $base-font-family;
+$inner-item-font-weight:        bold;
+$inner-item-text-transform:     capitalize;
+$inner-item-text-align:         left;
+
+// Inner Level - Color
+$inner-item-color:            $action-color;
+$inner-item-color-hover:      $white;
+$inner-item-color-active:     $white;
+
+// Inner Level - Background Color
+$inner-item-bgcolor:         $primary-color;
+$inner-item-bgcolor-hover:   $secondary-color;
+$inner-item-bgcolor-active:  $secondary-color;
+
+
+// Non-mobile settings
+#block-sf-secondarynavigation {
+  &.block-superfish {
+    display: none;
+    @include bp($main-nav, up) {
+      display: block;
+      //float: right;
+      width: auto;
+      padding-right: $nav-search-width; // Make room for the search trigger
+    }
+  }
+}
+
+ul#superfish-secondary {
+  float: none;
+  background-color: $bgcolor;
+  //display: flex;
+
+  .block-inner {
+    padding: 0;
+  }
+
+  /* Any item, at any level */
+  li {
+    box-sizing: border-box;
+    a {
+      box-sizing: border-box;
+      text-decoration: none;
+    }
+  }
+
+  /* Top level only */
+  & > li {
+    display: inline-block;
+    //flex-grow: 1;
+    border: $item-border-style $item-border-color;
+    border-width: $item-border-width;
+    height: $nav-height;
+
+    & > a {
+      height: $nav-height;
+      background-color: $item-bgcolor;
+      color: $item-color;
+      font-family: $item-font-family;
+      font-weight:  $item-font-weight;
+      text-transform:  $item-text-transform;
+      text-align:  $item-text-align;
+      @include font-size($base-font-size);
+      line-height: ($nav-height + 5);
+      padding: 0 1em;
+      @include bp(large, up) {
+        @include font-size($base-font-size);
+      }
+    }
+    a:hover,
+    a:focus,
+    &:hover > a,
+    &:hover,
+    &.active-trail:hover > a,
+    &.over > a {
+      background-color: $item-bgcolor-hover;
+      color: $item-color-hover;
+    }
+    &.active-trail > a {
+      background-color: $item-bgcolor-active;
+      color: $item-color-active;
+      &:hover,
+      &:focus {
+        background-color: $item-bgcolor-hover;
+      }
+    }
+    a:focus {
+      outline: 1px solid $black;
+    }
+  }
+
+  /* Any inner level (drop-down menu) */
+  li ul {
+    width: inherit;
+
+    li {
+      border: $inner-item-border-style $inner-item-border-color;
+      border-width: $inner-item-border-width;
+      a {
+        display: block;
+        white-space: nowrap;
+        padding: 1em;
+        background-color: $inner-item-bgcolor;
+        color: $inner-item-color;
+        font-family: $inner-item-font-family;
+        font-weight:  $inner-item-font-weight;
+        text-transform:  $inner-item-text-transform;
+        text-align:  $inner-item-text-align;
+        @include font-size(14px);
+        line-height: 16px;
+
+        // Arrows to indicate secondary menu.
+        &:not(:only-child):after {
+          position: absolute;
+          //top: 10;
+          @extend %icon-font;
+          font-family: $icomoon;
+          content: $icon-subnav;
+          @include font-weight(normal);
+          font-size: .9em;
+        }
+        &:after {
+          right: 1em;
+          color: $white;
+        }
+      }
+      a:hover,
+      a:focus,
+      &:hover > a ,
+      &.over > a {
+        background-color: $inner-item-bgcolor-hover;
+        color: $inner-item-color-hover;
+      }
+      &.active-trail > a {
+        background-color: $inner-item-bgcolor-active;
+        color: $inner-item-color-active;
+      }
+    }
+  }
+
+  /* Only Second level */
+  & > li > ul {
+    min-width: 100%;
+    right: auto;
+    top: auto;
+    background: $primary-color;
+
+    & > li {
+
+      & > a {
+      }
+      &:hover > a,
+      &.over > a {
+      }
+
+      /* Third level */
+      & > ul {
+        top: -1; // To account for 1px top border. Otherwise, set to 0
+        border-left: 1px solid $inner-item-border-color;
+        & > li {
+          &.active-trail > a,
+          &:hover > a,
+          &.over > a {
+          }
+        }
+      }
+    }
+  }
+}
+
+.js { // only is js is enabled
+  ul#superfish-secondary {
+    &.fouc {
+      visibility: hidden;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+<div class="search-form-wrapper">{{ form }}</div>
+
+{% if search_title %}
+  <h2>{{ search_title }}</h2>
+{% endif %}
+
+{% if no_of_results %}
+  <p class="results-total">{{ no_of_results }}</p>
+{% endif %}
+
+{{ no_results_found }}
+
+{{ search_help }}
+
+{{ results }}
+
+{{ pager }}

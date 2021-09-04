@@ -1,0 +1,200 @@
+// ==========================================================================
+//   VIEWS
+// ==========================================================================
+
+
+.view-content {
+  .views-row:not(.slick-slide) {
+    margin-bottom: 2em;
+  }
+}
+
+
+// Empty view
+.view-empty {
+  clear: both;
+  text-align: center;
+  .filter-no-results { //class applied in Views UI or twig
+    display: inline-block;
+    &:focus {
+      outline: 1px dotted $base-border-color;
+      outline-offset: 10px;
+    }
+  }
+}
+
+// The number of views results
+// Note: these classes need to be added with the results tokens in the Views UI or
+// done programmatically in customized views-view.html.twig files
+.view-results-total {
+  clear: both;
+  text-align: center;
+  margin-top: $gutter/2;
+  margin-bottom: $gutter*1.5;
+  .filtered-results {
+    display: inline-block;
+    &:focus {
+      outline: 1px dotted $base-border-color;
+      outline-offset: 10px;
+    }
+  }
+}
+
+// Footer
+.view-footer {
+  clear: both;
+}
+
+// Pager
+.view {
+  .pager {
+    clear: both;
+    float: left;
+    width: 100%;
+    margin-top: $gutter;
+  }
+}
+
+// Better Exposed Filters
+.bef-exposed-form {
+  .form-item,
+  .form-actions {
+    clear: both;
+    float: left;
+  }
+}
+
+// Two column grids. Class needs to be applied on the View
+.two-col-grid {
+  .views-row {
+    float: none;
+    width: 100%;
+    padding: 0;
+    margin-bottom: 2em;
+    @include bp(small, up) {
+      float: left;
+      &:nth-of-type(2n+1) { // First item (1st in row of 2)
+        clear: left;
+        width: 48%;
+        margin: 0 2% 2em 0;
+      }
+      &:nth-of-type(2n+2) { // Last item (2nd in row of 2)
+        width: 48%;
+        margin: 0 0 2em 2%;
+      }
+    }
+  }
+}
+
+// Three column grids. Class needs to be applied on the View
+.three-col-grid {
+  .views-row {
+    float: none;
+    width: 100%;
+    padding: 0;
+    margin-bottom: 2em;
+    @include bp(small, up) {
+      float: left;
+      &:nth-of-type(2n+1) { // First item (1st in row of 2)
+        clear: left;
+        width: 49%;
+        margin: 0 1% 2em 0;
+      }
+      &:nth-of-type(2n+2) { // Middle item (2nd in row of 2)
+        width: 49%;
+        margin: 0 0 2em 1%;
+      }
+    }
+    @include bp($sidebar, up) {
+      float: left;
+      &:nth-of-type(2n+1) {
+        clear: none; // reset from previous breakpoint
+      }
+      &:nth-of-type(3n+1) { // First item (1st in row of 3)
+        clear: left;
+        width: 32%;
+        margin: 0 1% 2em 0;
+      }
+      &:nth-of-type(3n+2) { // Middle item (2nd in row of 3)
+        width: 32%;
+        margin: 0 1% 2em 1%;
+      }
+      &:nth-of-type(3n+3) { // Last item (3rd in row of 3)
+        width: 32%;
+        margin: 0 0 2em 1%;
+      }
+    }
+  }
+}
+
+// Four column grids. Class needs to be applied on the View
+.four-col-grid {
+  .views-row {
+    float: none;
+    width: 100%;
+    padding: 0;
+    margin-bottom: 2em;
+    @include bp(small, up) {
+      float: left;
+      &:nth-of-type(2n+1) { // First item (1st in row of 2)
+        clear: left;
+        width: 49%;
+        margin: 0 1% 2em 0;
+      }
+      &:nth-of-type(2n+2) { // Middle item (2nd in row of 2)
+        width: 49%;
+        margin: 0 0 2em 1%;
+      }
+    }
+    @include bp($sidebar, up) {
+      float: left;
+      &:nth-of-type(2n+1) {
+        clear: none; // reset from previous breakpoint
+      }
+      &:nth-of-type(4n+1) { // First item (1st in row of 4)
+        clear: left;
+        width: 23.5%;
+        margin: 0 1% 2em 0;
+      }
+      &:nth-of-type(4n+2) { // Second item (2nd in row of 4)
+        width: 23.5%;
+        margin: 0 1% 2em 1%;
+      }
+      &:nth-of-type(4n+3) { // Third item (3rd in row of 4)
+        width: 23.5%;
+        margin: 0 1% 2em 1%;
+      }
+      &:nth-of-type(4n) { // Last item (4th in row of 4)
+        width: 23.5%;
+        margin: 0 0 2em 1%;
+      }
+    }
+  }
+}
+
+.view-database-search {
+  .view-header {
+    font-family: $base-font-family;
+    @include font-size($h3-font-size-mobile);
+    @include font-weight(medium);
+    color: $base-font-color;
+    text-transform: capitalize;
+    text-align: center;
+    line-height: 1.28;
+    margin-bottom: $vertical-spacing;
+    .filtered-results {
+      display: inline-block;
+      &:focus {
+        outline: 1px dotted $base-border-color;
+        outline-offset: 10px;
+      }
+    }
+  }
+  .views-row {
+    & + .views-row {
+      margin-top: $vertical-spacing;
+      padding-top: $vertical-spacing;
+      border-top: 1px solid $base-border-color;
+    }
+  }
+}

@@ -1,0 +1,174 @@
+<?php
+
+/**
+ * @file
+ * Preprocess functions for psms.
+ */
+
+use Drupal\Component\Utility\Crypt;
+use Drupal\Core\Cache\CacheableMetadata;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Link;
+use Drupal\Core\Url;
+use Drupal\Core\Entity;
+
+/**
+ * Prepares variables for the html.html.twig template.
+ */
+function psms_preprocess_html(&$variables) {
+  try {
+    $variables['is_front'] = \Drupal::service('path.matcher')->isFrontPage();
+  }
+  catch (Exception $e) {
+    // If the database is not yet available, set default values for these
+    // variables.
+    $variables['is_front'] = FALSE;
+  }
+
+  // Add classes for node id and menu section.
+  if (!$variables['is_front']) {
+    $path = \Drupal::service('path.current')->getPath();
+    $alias = \Drupal::service('path_alias.manager')->getAliasByPath($path);
+    $alias = trim($alias, '/');
+    if (!empty($alias)) {
+      list($section,) = explode('/', $alias, 2);
+      if (!empty($section)) {
+        $variables['attributes']['class'][] = 'section-' . $section;
+      }
+    }
+    if ($node = \Drupal::request()->attributes->get('node')) {
+      $variables['attributes']['class'][] = 'node-' . $node->id();
+    }
+  }
+
+  // Add cachability metadata.
+  $theme_name = \Drupal::theme()->getActiveTheme()->getName();
+  $theme_settings = \Drupal::config($theme_name . '.settings');
+  CacheableMetadata::createFromRenderArray($variables)
+    ->addCacheableDependency($theme_settings)
+    ->applyTo($variables);
+  // Union all theme setting variables to the html.html.twig template.
+  $variables += $theme_settings->getOriginal();
+}
+
+/**
+ * Implements hook_preprocess_page() for the page.html.twig template.
+ */
+//function psms_preprocess_page(&$variables) {
+//}
+
+/**
+ * Implements template_preprocess_block().
+ */
+//function psms_preprocess_block(&$variables) {
+// uncomment if we need to use png instead of an svg for the site logo
+//  switch ($variables['base_plugin_id']) {
+  //  case 'system_branding_block':
+    //  $variables['site_logo'] = '';
+      //if ($variables['content']['site_logo']['#access'] && $variables['content']['site_logo']['#uri']) {
+        //$variables['site_logo'] = str_replace('.svg', '.png', $variables['content']['site_logo']['#uri']);
+      //}
+     // break;
+
+  //}
+//}
+
+/**
+ * Implements hook_preprocess_node() for the node.html.twig template.
+ */
+//function psms_preprocess_node(&$variables) {
+//}
+
+/**
+ * Implements hook_preprocess_field() for the field.html.twig template.
+ */
+function psms_preprocess_field(&$variables, $hook) {
+  // Make additional variables available to the template.
+  $variables['bundle'] = $variables['element']['#bundle'];
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function psms_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Add placeholder text to search block form
+  if ($form_id == 'search_block_form') {
+    $form['keys']['#attributes']['placeholder'] = t('Search');
+  }
+  // Add placeholder text to search api block form
+  if ($form_id == 'search_api_page_block_form') {
+    $form['keys']['#attributes']['placeholder'] = t('Enter Search Terms');
+  }
+}
+
+/**
+ * Implements hook_preprocess_search_result() for the search-result.html.twig template.
+ *
+ * NOTE: The search result twig file will need to have code commented/uncommented based
+ * on whether results display as a snippet or a view mode
+ *
+ */
+function psms_preprocess_search_result(&$variables) {
+
+// Display results with a snippet
+
+  $result = $variables['result'];
+  // Content Type variable
+  if (isset($result['type'])) {
+    $variables['content_type'] = $result['type'];
+  }
+  // Read More variable
+  $node = $result['node'];
+  $url = $node->nid->value;
+  $options = array(
+    'attributes' => ['class' => ['read-more']],
+    'absolute'   => TRUE,
+  );
+  $variables['read'] = Link::fromTextAndUrl(t('More'), Url::fromUri('internal:/node/' . $url, $options))->toString();
+
+  // Or, display search results using view modes
+
+    // display the search results with the search results view mode on the node
+    //$result = $variables['result'];
+    //$nid = $result['node']->nid->value;
+
+    //$entity_type = 'node';
+    //$view_mode = 'search_result';
+
+    //$view_builder = \Drupal::entityTypeManager()->getViewBuilder($entity_type);
+    //$storage = \Drupal::entityTypeManager()->getStorage($entity_type);
+    //$node = $storage->load($nid);
+    //$build = $view_builder->view($node, $view_mode);
+    //$variables['search_result_view_mode'] = render($build);
+}
+
+
+/**
+ * Implements hook_preprocess__item_list__search_results() for item-list--search-results.html.twig template
+ */
+function psms_preprocess_item_list__search_results(array &$variables) {
+  // The $pager_total_items variable is a global
+  // array keyed by the pager element increments.
+  global $pager_total_items;
+
+  // Assuming you have one paged list on your page only,
+  // the element's key should be 0.
+  $variables['total_items_count'] = isset($pager_total_items[0]) ? $pager_total_items[0] : 0;
+}
+
+/**
+ * Implements hook_preprocess_container().
+ * Solution to accessibility issue where multiple forms on a single node
+ * get the same ID
+ * https://www.drupal.org/project/drupal/issues/1852090#comment-13115760
+ */
+function psms_preprocess_container(&$variables) {
+  if (isset($variables['element']['#id'])) {
+    $id = $variables['element']['#id'];
+    if (in_array($id, ['edit-actions'])) {
+      $id .= '--' . Crypt::randomBytesBase64(8);
+    }
+    $variables['element']['#id'] = $id;
+    $variables['attributes']['id'] = $id;
+  }
+}

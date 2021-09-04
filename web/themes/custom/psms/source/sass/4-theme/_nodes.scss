@@ -1,0 +1,189 @@
+// ==========================================================================
+//   NODES
+//   1. All nodes, regardless off view mode
+//   2. All view modes, regardless of content type
+//   3. Import the partials for individual content types
+// ==========================================================================
+
+%teaser-titles {
+  @include font-size($teaser-title);
+  line-height: 1.1em;
+  @include font-weight(bold);
+  text-transform: capitalize;
+}
+
+
+//  1. All nodes, regardless off view mode
+//  ==========================================================================
+
+.node {
+  .field--name-body {
+    clear: both;
+  }
+  &.node--unpublished {
+    background-color: #fff4f4;
+  }
+  &.ds-2col-fluid {
+    .group-right {
+      .field {
+        & + .field:not(.field--name-node-title) {
+          margin-top: $vertical-spacing;
+        }
+      }
+    }
+  }
+}
+
+.node-preview-container {
+  position: relative;
+  a.node-preview-backlink {
+    display: inline-block;
+    padding: 0.2em 1em;
+    text-decoration: none;
+    color: $tab-text;
+    background: $tab-background;
+    @include font-weight(normal);
+    @include border-radius(4px);
+    &.is-active {
+      background-color: $tab-background;
+      color: $tab-text;
+    }
+    &:hover,
+    &:focus {
+      background-color: $tab-background-active;
+      color: $tab-text;
+    }
+  }
+  .form-item {
+    display: inline-block;
+    max-width: $body-width;
+    margin-left: $gutter;
+    .custom-select {
+      select {
+        width: auto;
+        background: $white;
+      }
+    }
+  }
+}
+
+
+//  2. All view modes, regardless of content type
+//    a. Full
+//    b. Teaser
+//    c. Teaser-small
+//    d. Card
+//    e. Banner
+//    f. Featured
+//    g. Sidebar
+//    h. Post content
+//    i. Search result
+//  ==========================================================================
+
+// Full
+.node--view-mode-full {
+  .field--name-body {
+    max-width: $body-width;
+    @include clearfix;
+  }
+
+  // Markup for body fields (no body but a summary) and view fields get rendered even if they are
+  // visually empty. A class is applied in jQuery to flag those instances
+  // although it would be ideal to handle it through twig.
+  > .field:not(.empty-body-field) + .field:not(.empty-view-field) {
+    margin-top: $vertical-spacing * 2;
+    @include bp(medium, up) {
+      margin-top: $vertical-spacing * 3;
+    }
+  }
+  > .field:not(.empty-body-field) + .field--name-field-related-view {
+    > .field__item {
+      float:left;
+    }
+  }
+}
+
+// Teaser
+.node--view-mode-teaser {
+  @include responsive-display-2col($width: 30%, $gutter: 2.5%, $image-container: left);
+  .field--name-node-title {
+    h2, h3 {
+      @extend %teaser-titles;
+    }
+  }
+  .field--name-body {
+    @include font-size($teaser-body);
+  }
+}
+
+// Teaser-small
+.node--view-mode-teaser-small {
+  .field--name-node-title {
+    h2, h3 {
+      @extend %teaser-titles;
+    }
+  }
+  .field--name-body {
+    @include font-size($teaser-body);
+  }
+}
+
+
+// Card
+.node--view-mode-card {
+  .field--name-node-title {
+    margin-top: $gutter/2;
+    h2, h3 {
+      @extend %teaser-titles;
+    }
+  }
+  .field--name-body {
+    @include font-size($teaser-body);
+  }
+}
+
+// Banner
+.node--view-mode-banner {
+  @include responsive-display-2col($width: 30%, $gutter: 2.5%, $image-container: right);
+  &.group-one-column {
+    .field {
+      text-align: center;
+    }
+  }
+}
+
+// Featured
+.node--view-mode-featured {}
+
+// Sidebar
+.node--view-mode-sidebar {}
+
+
+// Post content
+.node--view-mode-post-content {}
+
+
+// Search result
+.node--view-mode-search-result {
+  @include responsive-display-2col($width: 30%, $gutter: 2.5%, $image-container: left);
+  max-width: $body-width;
+  .field--name-node-title {
+    h2, h3 {
+      @extend %teaser-titles;
+    }
+  }
+  .field--name-body {
+    @include font-size($teaser-body);
+  }
+  .field--name-node-changed-date {
+    font-size: .8em;
+  }
+}
+
+//  3. Import the partials of individual content types
+//  ==========================================================================
+
+@import "content-types/page";
+@import "content-types/bio";
+@import "content-types/event";
+@import "content-types/news";

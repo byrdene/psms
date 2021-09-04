@@ -9,7 +9,7 @@ dependencies:
  - drupal:datetime
  - smart_date:smart_date
 
-# Information added by Drupal.org packaging script on 2021-08-23
-version: '3.4.1'
+# Information added by Drupal.org packaging script on 2021-08-26
+version: '3.4.2'
 project: 'smart_date'
-datestamp: 1629713725
+datestamp: 1630015893

@@ -1,0 +1,26 @@
+{%
+  set classes = [
+    'block',
+    'block-' ~ configuration.provider|clean_class,
+    'block-' ~ plugin_id|clean_class,
+  ]
+%}
+
+{# Currently, this CTools block (Entity view (Content)) outputs the block even if there is no content. #}
+{# It seems to treat white space as content. #}
+{% set has_content = content|render|trim %}
+
+{% if has_content %}
+<div{{ attributes.addClass(classes) }}>
+  {{ title_prefix }}
+  {% if label %}
+    <h2{{ title_attributes }} class="block__title">{{ label }}</h2>
+  {% endif %}
+  {{ title_suffix }}
+  {% block content %}
+    <div class="block__content">
+      {{ content }}
+    </div>
+  {% endblock %}
+</div>
+{% endif %}

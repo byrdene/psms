@@ -1,0 +1,81 @@
+/* =============================================================================
+   BEF KEYWORD FILTER
+   Used when all but the keyword filter is set to autosubmit and the submit button
+   should be rendered as an icon next to the filter.
+================================================================================ */
+
+.bef-exposed-form:not(.block-search):not(.block-searchpage-search) {
+  position: relative; // when class is applied to form element
+  form {
+    position: relative; // when bef form is in block and class is applied on the block
+  }
+  .form-item {
+    clear: both;
+    float: left;
+  }
+  .form-item--id-keyword-filter,
+  .form-item--id-combine,
+  .form-item--id-keys {
+    max-width: none;
+    width: 100%;
+    padding-right: 10px;
+  }
+  .form-actions {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    display: inline-block;
+    margin-left: -5px;
+    margin-bottom: 0;
+    input.form-submit {
+      position: relative;
+      z-index: 10;
+      cursor: pointer;
+      display: block;
+      box-sizing: border-box;
+      border: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      text-indent: -9999px;
+      background-color: transparent;
+      outline: none !important;
+      line-height: $form-item-height;
+      height: $form-item-height;
+      width: $form-item-height;
+    }
+    &:before {
+      z-index:0;
+      text-align: center;
+      font-family: $icomoon;
+      content: $icon-search;
+      vertical-align: middle;
+      text-decoration: none;
+      cursor: pointer;
+      color: $white;
+      font-size: 24px;
+      background: $primary-color;
+      @include border-radius(0);
+      //outline: none !important;
+      position: absolute;
+      top: -2px;
+      display: block;
+      box-sizing: border-box;
+      overflow: visible;
+      line-height: $form-item-height;
+      height: $form-item-height;
+      width: $form-item-height;
+      &:hover,
+      &:active {
+        cursor: pointer;
+        color: $white;
+        background-color: $action-color;
+      }
+    }
+    &:hover {
+      &:before {
+        background: $secondary-color;
+      }
+    }
+  }
+}

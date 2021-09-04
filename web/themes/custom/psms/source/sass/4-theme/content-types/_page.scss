@@ -1,0 +1,14 @@
+// ==========================================================================
+//   PAGE Content type
+// ==========================================================================
+
+.node--type-page {
+  &.node--view-mode-full {}
+  &.node--view-mode-teaser {}
+  &.node--view-mode-teaser-small {}
+  &.node--view-mode-card {}
+  &.node--view-mode-featured {}
+  &.node--view-mode-banner {}
+  &.node--view-mode-sidebar {}
+  &.node--view-mode-post-content {}
+}

@@ -1,0 +1,16 @@
+@import "0-config/__config";
+
+// LAYOUT: Macro arrangement of a web page, including any grid systems.
+// Read more about SMACSS categorization for Drupal Themes: https://www.drupal.org/node/1887922
+
+// This file is compiled separately so we can pull in config dependencies above
+// while also maintaining Drupal's SMACSS structure.
+
+@import "2-layout/regions";
+@import "2-layout/header";
+@import "2-layout/banner";
+@import "2-layout/pre-content";
+@import "2-layout/primary-content";
+@import "2-layout/post-content";
+@import "2-layout/footer";
+@import "2-layout/homepage";

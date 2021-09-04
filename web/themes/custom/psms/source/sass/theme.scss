@@ -1,0 +1,50 @@
+@import "0-config/__config";
+
+// THEME: purely visual styling (“look-and-feel”) for a component.
+// Read more about SMACSS categorization for Drupal Themes: https://www.drupal.org/node/1887922
+// When following SMCASS, this would be used for dark/light themes (not general styling): https://smacss.com/book/type-theme
+
+// This file is compiled separately so we can pull in config dependencies above
+// while also maintaining Drupal's SMACSS structure.
+
+@import "4-theme/fields";
+@import "4-theme/nodes";
+@import "4-theme/blocks";
+@import "4-theme/views";
+
+//.gin--classic-toolbar {
+//  .toolbar-tab {
+//    > .toolbar-icon.is-active:hover:before {
+//      background-color: #fff !important;
+//    }
+//    > .toolbar-icon-environment {
+//      &:before {
+//        background-image: url("../../static/images/env-bebebe.svg") !important;
+//        background-color: transparent !important;
+//        mask-image: none !important;
+//        background-size: 90% auto !important;
+//        background-repeat: no-repeat !important;
+//        background-position: center !important;
+//      }
+//      &.is-active:before {
+//        background-image: url("../../static/images/env-ffffff.svg");
+//      }
+//    }
+//  }
+//  .toolbar-icon-toggle-horizontal,
+//  .toolbar-icon-toggle-vertical {
+//    z-index: 2;
+//    &:before {
+//      mask-image: none !important;
+//    }
+//  }
+//}
+//
+//.responsive-preview-icon {
+//  outline: none;
+//}
+
+  .toolbar-icon-toggle-horizontal,
+  .toolbar-icon-toggle-vertical {
+    z-index: 2;
+  }

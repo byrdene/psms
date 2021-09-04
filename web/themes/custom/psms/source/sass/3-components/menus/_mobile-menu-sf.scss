@@ -1,0 +1,382 @@
+// NOTE: This is all in draft mode.
+
+/* ----- Mobile Menu (Superfish) Variables ----------------- */
+
+$menu-top:               $mobile-header-height; // top edge of mobile menu
+
+//**************** TOP LEVEL *************/
+// Top Level - Border
+$item-border-width:       0 0 1px 0;
+$item-border-style:       solid;
+$item-border-color:       darken($primary-color, 10%);
+
+// Top Level -  Font
+$item-font-family:        $base-font-family;
+$item-font-size:          $base-font-size;
+$item-font-padding:       1em 1em 1em $gutter;
+$item-letter-spacing:     .5px;
+$item-font-weight:        bold;
+$item-text-transform:     uppercase;
+$item-text-align:         left;
+
+// Top Level -  Color
+$item-color:              $white;
+$item-color-hover:        $white;
+$item-color-active:       $white;
+
+// Top Level - Background Color
+$item-bgcolor:           $primary-color;
+$item-bgcolor-hover:     darken($primary-color, 10%);
+$item-bgcolor-active:    darken($primary-color, 10%);
+
+//**************** INNER LEVEL (drop down) *************/
+
+$inner-bgcolor:               transparent;
+
+// Inner Level - Border
+$inner-item-border-width :    1px 0 0 0;
+$inner-item-border-style:     solid;
+$inner-item-border-color:     $white;
+
+// Inner Level -  Font
+$inner-item-font-family:        $base-font-family;
+$inner-item-font-size:          $base-font-size;
+$inner-item-font-padding:       1em 1em 1em $gutter;
+$inner-item-font-weight:        normal;
+$inner-item-text-transform:     capitalize;
+$inner-item-text-align:         left;
+
+// Inner Level - Color
+$inner-item-color:            $white;
+$inner-item-color-hover:      $white;
+$inner-item-color-active:     $white;
+
+// Inner Level - Background Color
+$inner-item-bgcolor:         $action-color;
+$inner-item-bgcolor-hover:   darken($inner-item-bgcolor, 10%);
+$inner-item-bgcolor-active:  darken($inner-item-bgcolor, 10%);
+
+//**************** APPENDED SECONDARY MENU *************/
+
+// Secondary Menu Item - Border
+$secondary-item-border-width:        0 0 0 0;
+$secondary-item-border-style:         solid;   // values: none/dotted/dashed/solid
+$secondary-item-border-color:         none;
+
+// Inner Level -  Font
+$secondary-item-font-family:        $base-font-family;
+$secondary-item-font-size:          $base-font-size * .8;
+$secondary-item-font-padding:       1em 1em 1em $gutter;
+$secondary-item-font-weight:        normal;
+$secondary-item-text-transform:     capitalize;
+$secondary-item-text-align:         left;
+
+// Secondary Menu Item -  Color
+$secondary-item-color:                $white;
+$secondary-item-color-hover:          $white;
+$secondary-item-color-active:         $white;
+
+// Secondary Menu Item - Background Color
+$secondary-item-bgcolor:              $primary-color;
+$secondary-item-bgcolor-hover:        darken($primary-color, 10%);
+$secondary-item-bgcolor-active:       darken($primary-color, 10%);
+
+
+//**************** Responsive Search Trigger Button *************/
+
+$icon-font-family:          $icomoon;
+$icon-color:                $white;
+$icon-bgcolor:              $primary-color;
+$trigger-icon-font-size:    30px;
+$trigger-height:            $nav-height;
+$trigger-width:             $nav-height;
+$trigger-line-height:       $nav-height;
+$mobile-trigger:            45px; // all sizes
+
+// ==========================================================================
+
+// Mobile only settings
+#block-mainnavigation-sf {
+  &.block-superfish {
+    width: auto;
+  }
+}
+
+/* Mobile menu trigger */
+%menu-button { // Icon Trigger Configuration
+  text-align: center;
+  font-family: $icon-font-family;
+  content: $icon-menu;
+  vertical-align: middle;
+  text-decoration: none;
+  cursor: pointer;
+  color: $icon-color;
+  font-size: $trigger-icon-font-size;
+  background-color: $icon-bgcolor;
+  @include border-radius(5px);
+  &:hover,
+  &:active {
+    cursor: pointer;
+    color: $icon-color;
+    background-color: $action-color;
+    @include bp($main-nav, up) {
+      background-color: $action-color;
+    }
+  }
+}
+
+.sf-accordion-toggle {
+  display: inline-block;
+  #superfish-main-toggle {
+    span {
+      display: none;
+    }
+    border: none;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    z-index:2;
+    outline: none !important;
+    line-height: $mobile-trigger;
+    height: $mobile-trigger;
+    width: $mobile-trigger;
+    position: absolute;
+    top: $mobile-toggle-position;
+    right: $mobile-toggle-position;
+
+    &:after {
+      z-index:1;
+      @extend %menu-button;
+      outline: none !important;
+      position: absolute;
+      display: block;
+      box-sizing: border-box;
+      top: 0;
+      bottom: auto;
+      left: 0;
+      right: auto;
+      overflow: visible;
+      line-height: $mobile-trigger;
+      height: $mobile-trigger;
+      width: $mobile-trigger;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    &:focus {
+      &:after {
+        background-color: $action-color;
+      }
+    }
+  }
+}
+
+ul#superfish-main-accordion {
+  float: left;
+  top: $menu-top !important;
+  background: $primary-color;
+  //padding-bottom: $gutter;
+  border-bottom: 1px solid $white;
+
+  /* Any item, at any level */
+  li {
+    a {
+      box-sizing: border-box;
+      text-decoration: none;
+    }
+  }
+
+  // Accessbility - accessing subnab while tabbing with keyboard
+  ul.sf-hidden.show-subnav { // class applied via jQuery
+    left: auto !important;
+    position: relative !important;
+    top: auto !important;
+    overflow: visible !important;
+    width: 100% !important;
+  }
+
+  /* Top level only */
+  & > li {
+    border: $item-border-style $item-border-color;
+    border-width: $item-border-width;
+
+    & > a {
+      background-color: $item-bgcolor;
+      color: $item-color;
+      font-family: $item-font-family;
+      font-weight:  $item-font-weight;
+      text-transform:  $item-text-transform;
+      text-align:  $item-text-align;
+      line-height: 1;
+      @include font-size($item-font-size);
+      letter-spacing: $item-letter-spacing;
+      padding: $item-font-padding;
+
+      // Icon to indicate secondary menu (plus, arrow, etc.)
+      &.menuparent:after {
+        position: absolute;
+        top: .5em;
+        right: $gutter;
+        font-size: 1.25em;
+        line-height: 1.25em;
+        @include font-weight(normal);
+        @extend %icon-font;
+        font-family: $icomoon;
+        content: $icon-mobile-subnav;
+        transition: all ease-in-out .2s;
+      }
+    }
+
+    a:focus,
+    a:hover,
+    &:hover > a,
+    &.active-trail:hover > a,
+    &.over > a {
+      background-color: $item-bgcolor-hover;
+      color: $item-color-hover;
+    }
+    &.active-trail > a {
+      background-color: $item-bgcolor-active;
+      color: $item-color-active;
+      &:focus,
+      &:hover {
+        background-color: $item-bgcolor-hover;
+      }
+    }
+
+    // Icon to indicate secondary menu is expanded (plus changes to minus, triangle rotates down, etc.)
+    &.sf-expanded {
+      > a.menuparent:after {
+        font-family: $icomoon;
+        //content: $icon-mobile-subnav-expanded; // using rotation and transtion effects instead
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  /* Any inner level (drop-down menu) */
+  li ul {
+    width: inherit;
+    li {
+      border: $inner-item-border-style $inner-item-border-color;
+      border-width: $inner-item-border-width;
+      a {
+        display: block;
+        @include font-size($inner-item-font-size);
+        padding: $inner-item-font-padding;
+        background-color: $inner-item-bgcolor;
+        color: $inner-item-color;
+        font-family: $inner-item-font-family;
+        font-weight:  $inner-item-font-weight;
+        text-transform:  $inner-item-text-transform;
+        text-align:  $inner-item-text-align;
+
+        // Icon to indicate secondary menu (plus, arrow, etc.)
+        &.menuparent:after {
+          position: absolute;
+          top: .25em;
+          right: $gutter;
+          font-size: 1.5em;
+          line-height: 1.5em;
+          @include font-weight(normal);
+          @extend %icon-font;
+          font-family: $icomoon;
+          content: $icon-mobile-subnav;
+        }
+
+      }
+      a:focus,
+      a:hover,
+      &:hover > a ,
+      &.over > a {
+        background-color: $inner-item-bgcolor-hover;
+        color: $inner-item-color-hover;
+      }
+      &.active-trail > a {
+        background-color: $inner-item-bgcolor-active;
+        color: $inner-item-color-active;
+      }
+      // Icon to indicate secondary menu is expanded (plus changes to minus, triangle rotates down, etc.)
+      &.sf-expanded {
+        a.menuparent:after {
+          font-family: $icomoon;
+          content: $icon-mobile-subnav-expanded;
+        }
+      }
+    }
+  }
+
+  /* Only Second level */
+  & > li > ul {
+    min-width: 100%;
+    right: auto;
+    top: auto;
+
+    & > li {
+      & > a {
+      }
+      &:hover > a,
+      &.over > a {
+      }
+
+      /* Third level */
+      & > ul {
+        & > li {
+          &.active-trail > a,
+          &:hover > a,
+          &.over > a {
+          }
+        }
+      }
+    }
+  }
+
+  // Cloned Secondary menu items
+  li.secondary-nav-item {
+    border: $secondary-item-border-style $secondary-item-border-color;
+    border-width: $secondary-item-border-width;
+    a {
+      min-height: 0;
+      font-family: $secondary-item-font-family;
+      font-weight: $secondary-item-font-weight;
+      padding: $secondary-item-font-padding;
+      @include font-size($secondary-item-font-size);
+      line-height: $secondary-item-font-size * 2;
+      text-transform: $secondary-item-text-transform;
+      color: $secondary-item-color;
+      background-color: $secondary-item-bgcolor;
+
+      // Hide icon to indicate secondary menu (plus, arrow, etc.)
+      &.menuparent:after {
+        //position: absolute;
+        //top: .25em;
+        //right: $gutter;
+        //font-size: 1.5em;
+        //line-height: 1.5em;
+        //@include font-weight(normal);
+        //@extend %icon-font;
+        //font-family: $icomoon;
+        //content: $icon-mobile-subnav;
+        content: "";
+      }
+
+    }
+    &:focus,
+    &:hover,
+    & > a:hover,
+    & > a:focus {
+      text-decoration: none;
+      color: darken($secondary-item-color-hover, 10%);
+    }
+  }
+
+  li.secondary-nav-item + li {
+    a {
+      padding-top: 0; // Reset padding. Only wanted top padding on first instance of class
+    }
+  }
+
+  &.fouc {
+    visibility: hidden;
+  }
+}

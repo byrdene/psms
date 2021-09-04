@@ -1,0 +1,30 @@
+// ==========================================================================
+//   FOOTER
+// ==========================================================================
+
+footer {
+  @include clearfix;
+  background: $footer-background-color;
+  color: $white;
+  width: 100%;
+  .container {
+    @include center-block;
+    max-width: $page-width;
+    #footer-first,
+    #footer-second,
+    #footer-third {
+      float: left;
+      width: 100%;
+    }
+    @include bp(large, up) {
+      #footer-first,
+      #footer-second,
+      #footer-third {
+        width: 32%;
+      }
+      #footer-second {
+        margin: 0 2%;
+      }
+    }
+  }
+}

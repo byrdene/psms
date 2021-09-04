@@ -1,0 +1,67 @@
+// ==========================================================================
+//   EVENT content type
+// ==========================================================================
+
+.node--type-event {
+  &.node--view-mode-full {}
+  &.node--view-mode-teaser,
+  &.node--view-mode-teaser-small {
+    .group-left {
+      width: 80px;
+      margin-right: 40px;
+    }
+    .group-right {
+      width: calc(100% - 120px); // 100% minus the combination of group left width and margin
+      padding: 0;
+    }
+    .date-wrapper {
+      width: 80px;
+      height: 80px;
+      background: $primary-color;
+      padding: $gutter/2 $gutter/4;
+      text-align: center;
+      .field {
+        &.field--name-dynamic-token-fieldnode-event-month {
+          @extend %label-small;
+          color: $black;
+        }
+        &.field--name-dynamic-token-fieldnode-event-day {
+          font-size: $h1-font-size;
+          line-height: $h1-font-size;
+          margin-top: -.1em;
+          @include font-weight(bold);
+          color: $black;
+        }
+      }
+    }
+    .field--name-node-title h2, h3 {
+      font-size: $teaser-title-small;
+      line-height: 1.1em;
+      @include bp($main-nav, up) {
+        font-size: $teaser-title
+      }
+    }
+    .field--name-field-event-venue,
+    .field--name-field-event-location,
+    .field--name-field-event-date, // not currently displayed on teaser in lieu of dynamic token field
+    .field--name-dynamic-token-fieldnode-start-time-only {
+      float: left;
+      display: inline-block;
+    }
+    .field--name-field-event-venue,
+    .field--name-field-event-location {
+      margin-right: .25em;
+      &:after {
+        display: inline-block;
+        content: "|";
+        padding-left: .25em;
+      }
+    }
+  }
+  &.node--view-mode-teaser-small {}
+  &.node--view-mode-card {}
+  &.node--view-mode-featured {}
+  &.node--view-mode-banner {}
+  &.node--view-mode-sidebar {}
+  &.node--view-mode-post-content {}
+}

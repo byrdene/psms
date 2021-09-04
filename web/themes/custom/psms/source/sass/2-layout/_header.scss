@@ -1,0 +1,45 @@
+// ==========================================================================
+//   SITE HEADER
+// ==========================================================================
+
+#site-header {
+  @include clearfix;
+  background: $header-background-color;
+  position: relative;
+  height: $mobile-header-height;
+  @include bp($main-nav, up) {
+    height: auto;
+  }
+  .container {
+    @include center-block;
+    max-width: $page-width;
+
+    @include bp($main-nav, up) {
+      .region-header {
+        width: ($logo-mx-medium +  $gutter*2 + $gutter*2);
+        float: left;
+      }
+      .region-navigation-secondary {
+        position: relative;
+        float:right;
+        width: calc(100% - (#{$logo-mx-medium} + (#{$gutter}*4)));
+      }
+    }
+    @include bp(large, up) {
+      .region-header {
+        width: ($logo-mx-large +  $gutter*2 + $gutter*2);
+      }
+      .region-navigation-secondary {
+        width: calc(100% - (#{$logo-mx-large} + (#{$gutter}*4)));
+      }
+    }
+    @include bp(x-large, up) {
+      .region-header {
+        width: ($logo-mx-xlarge +  $gutter*2 + $gutter*2);
+      }
+      .region-navigation-secondary {
+        width: calc(100% - (#{$logo-mx-xlarge} + (#{$gutter}*4)));
+      }
+    }
+  }
+}

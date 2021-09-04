@@ -1,0 +1,34 @@
+// ==========================================================================
+//   BLOCKS
+// ==========================================================================
+
+.block {
+  @include clearfix;
+}
+
+.region-content,
+.sidebar {
+  .block {
+    & + .block {
+      margin-top: $vertical-spacing;
+    }
+  }
+}
+
+.sidebar {
+  .block {
+    h2.block__title {
+      @include font-size($sidebar-block-title);
+    }
+  }
+}
+
+// Block Select Styles
+
+.block {
+  &.callout { // "Callout" in the Block UI
+    background: $callout-background-color;
+    padding: $gutter;
+    h2.block__title {}
+  }
+}
