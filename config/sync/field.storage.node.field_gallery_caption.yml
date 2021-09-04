@@ -1,0 +1,19 @@
+uuid: 80c4e702-c787-438c-bb6d-e349eee75664
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_gallery_caption
+field_name: field_gallery_caption
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,23 @@
+uuid: 1f254f49-c3e3-4c4a-8669-11beeb0ddd42
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_button
+    - node.type.event
+  module:
+    - link
+id: node.event.field_button
+field_name: field_button
+entity_type: node
+bundle: event
+label: Button
+description: 'E.g. Link to an external site to "Register" or "Sign-up" '
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 2
+field_type: link

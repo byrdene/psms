@@ -1,0 +1,38 @@
+uuid: 5efc9010-1013-4c55-82a4-773673e847cb
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.card
+    - field.field.node.person.body
+    - field.field.node.person.field_main_image
+    - field.field.node.person.field_specialties
+    - node.type.person
+  module:
+    - user
+id: node.person.card
+targetEntityType: node
+bundle: person
+mode: card
+content:
+  field_main_image:
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: portrait_3x4
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_specialties:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  body: true
+  links: true
+  search_api_excerpt: true

@@ -1,0 +1,8 @@
+uuid: ff262a51-fc9f-4b5f-b48e-802308a535be
+langcode: en
+status: true
+dependencies: {  }
+name: Lessons
+vid: lessons
+description: ''
+weight: 0

@@ -1,0 +1,16 @@
+uuid: 3fd3e520-0f24-4379-bad0-eb77c6155d44
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.lessons.field_inactive
+    - taxonomy.vocabulary.lessons
+id: taxonomy_term.lessons.default
+targetEntityType: taxonomy_term
+bundle: lessons
+mode: default
+content: {  }
+hidden:
+  description: true
+  field_inactive: true
+  search_api_excerpt: true

@@ -1,0 +1,19 @@
+uuid: 4f1723f0-4a22-418a-8d11-f71f0b648e0a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_short_caption
+    - media.type.image
+id: media.image.field_short_caption
+field_name: field_short_caption
+entity_type: media
+bundle: image
+label: 'Short Caption'
+description: 'E.g. April 2019 Honors Piano Recital'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

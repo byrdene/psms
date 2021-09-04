@@ -1,0 +1,10 @@
+uuid: fb38370b-c2c2-4363-be13-49f7e9b2b4e5
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.welcome_photo
+label: 'Welcome Photo'
+targetEntityType: media
+cache: true

@@ -1,0 +1,23 @@
+uuid: 4e42ce66-118d-4e26-823c-a23f6b919600
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_inactive
+    - taxonomy.vocabulary.lessons
+id: taxonomy_term.lessons.field_inactive
+field_name: field_inactive
+entity_type: taxonomy_term
+bundle: lessons
+label: Inactive
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,31 @@
+uuid: 96803d0a-2693-4d18-8da9-32c22a01035b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.group_classes.field_inactive
+    - taxonomy.vocabulary.group_classes
+id: taxonomy_term.group_classes.default
+targetEntityType: taxonomy_term
+bundle: group_classes
+mode: default
+content:
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 1
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+hidden:
+  description: true
+  field_inactive: true
+  path: true

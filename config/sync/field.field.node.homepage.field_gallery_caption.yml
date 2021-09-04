@@ -1,0 +1,27 @@
+uuid: 152a52d1-c233-40a9-9925-f998d5cfe49f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_gallery_caption
+    - node.type.homepage
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    basic_html: basic_html
+    full_html: '0'
+    plain_text: '0'
+id: node.homepage.field_gallery_caption
+field_name: field_gallery_caption
+entity_type: node
+bundle: homepage
+label: 'Optional Gallery Caption'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

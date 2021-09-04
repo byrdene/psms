@@ -1,0 +1,25 @@
+uuid: 774861b5-eabc-402e-b4f4-8c829503bde7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.article.body
+    - node.type.article
+  module:
+    - text
+    - user
+id: node.article.default
+targetEntityType: node
+bundle: article
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  links: true
+  search_api_excerpt: true

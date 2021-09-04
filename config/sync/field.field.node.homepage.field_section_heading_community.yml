@@ -1,0 +1,21 @@
+uuid: 8cf05038-526c-4ea9-bfab-8ed87205baea
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_section_heading_community
+    - node.type.homepage
+id: node.homepage.field_section_heading_community
+field_name: field_section_heading_community
+entity_type: node
+bundle: homepage
+label: 'Section Heading'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: Community
+default_value_callback: ''
+settings: {  }
+field_type: string

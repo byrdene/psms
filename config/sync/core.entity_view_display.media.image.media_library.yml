@@ -4,7 +4,10 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.media.media_library
+    - field.field.media.image.field_general_highlights_slider
     - field.field.media.image.field_media_image
+    - field.field.media.image.field_short_caption
+    - field.field.media.image.field_welcome_photo
     - image.style.medium
     - media.type.image
   module:
@@ -27,7 +30,10 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
+  field_general_highlights_slider: true
   field_media_image: true
+  field_short_caption: true
+  field_welcome_photo: true
   name: true
   search_api_excerpt: true
   uid: true

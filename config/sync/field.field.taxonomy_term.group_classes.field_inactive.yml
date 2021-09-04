@@ -1,0 +1,21 @@
+uuid: f788aa5c-549e-4c1e-91ab-e3465b0bb1b0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_inactive
+    - taxonomy.vocabulary.group_classes
+id: taxonomy_term.group_classes.field_inactive
+field_name: field_inactive
+entity_type: taxonomy_term
+bundle: group_classes
+label: Inactive
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

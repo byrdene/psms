@@ -3,7 +3,10 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.media.image.field_general_highlights_slider
     - field.field.media.image.field_media_image
+    - field.field.media.image.field_short_caption
+    - field.field.media.image.field_welcome_photo
     - image.style.thumbnail
     - media.type.image
   module:
@@ -13,6 +16,13 @@ targetEntityType: media
 bundle: image
 mode: default
 content:
+  field_general_highlights_slider:
+    weight: 3
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
   field_media_image:
     settings:
       progress_indicator: throbber
@@ -22,6 +32,21 @@ content:
     third_party_settings: {  }
     type: image_focal_point
     weight: 1
+    region: content
+  field_short_caption:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_welcome_photo:
+    weight: 4
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
     region: content
   name:
     type: string_textfield
@@ -35,7 +60,7 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 2
+    weight: 5
     region: content
     third_party_settings: {  }
 hidden:

@@ -1,0 +1,23 @@
+uuid: 6ac699c6-88b7-49ce-bd30-1cd4dd54fb3c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_general_highlights_slider
+    - media.type.image
+id: media.image.field_general_highlights_slider
+field_name: field_general_highlights_slider
+entity_type: media
+bundle: image
+label: 'Include in General Highlights Slider'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

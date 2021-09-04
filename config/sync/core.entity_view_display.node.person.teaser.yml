@@ -1,0 +1,35 @@
+uuid: 55a4c024-78c1-4058-9119-c4ef11bd975d
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.person.body
+    - field.field.node.person.field_main_image
+    - field.field.node.person.field_specialties
+    - node.type.person
+  module:
+    - text
+    - user
+id: node.person.teaser
+targetEntityType: node
+bundle: person
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_main_image: true
+  field_specialties: true
+  search_api_excerpt: true

@@ -1,0 +1,137 @@
+uuid: b73e2bc9-f8db-4923-8bdd-55afcb69a4db
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.homepage.body
+    - field.field.node.homepage.field_announcements
+    - field.field.node.homepage.field_featured_article
+    - field.field.node.homepage.field_featured_testimonial
+    - field.field.node.homepage.field_gallery_caption
+    - field.field.node.homepage.field_photo_gallery
+    - field.field.node.homepage.field_quicklinks
+    - field.field.node.homepage.field_section_heading_community
+    - field.field.node.homepage.field_section_heading_highlights
+    - field.field.node.homepage.field_section_heading_welcome
+    - field.field.node.homepage.field_upcoming_events
+    - field.field.node.homepage.field_welcome_photos
+    - node.type.homepage
+  module:
+    - link
+    - text
+    - user
+    - viewfield
+id: node.homepage.default
+targetEntityType: node
+bundle: homepage
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_announcements:
+    weight: 9
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_featured_article:
+    weight: 10
+    label: hidden
+    settings:
+      view_mode: teaser
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_featured_testimonial:
+    weight: 5
+    label: hidden
+    settings:
+      view_title: hidden
+      always_build_output: false
+      empty_view_title: hidden
+    third_party_settings: {  }
+    type: viewfield_default
+    region: content
+  field_gallery_caption:
+    weight: 4
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_photo_gallery:
+    weight: 3
+    label: hidden
+    settings:
+      view_title: hidden
+      always_build_output: false
+      empty_view_title: hidden
+    third_party_settings: {  }
+    type: viewfield_default
+    region: content
+  field_quicklinks:
+    weight: 1
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_section_heading_community:
+    weight: 7
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_section_heading_highlights:
+    weight: 8
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_section_heading_welcome:
+    weight: 6
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_upcoming_events:
+    weight: 2
+    label: hidden
+    settings:
+      view_title: hidden
+      always_build_output: true
+      empty_view_title: hidden
+    third_party_settings: {  }
+    type: viewfield_default
+    region: content
+  field_welcome_photos:
+    weight: 11
+    label: hidden
+    settings:
+      view_title: hidden
+      always_build_output: false
+      empty_view_title: hidden
+    third_party_settings: {  }
+    type: viewfield_default
+    region: content
+hidden:
+  links: true
+  search_api_excerpt: true

@@ -1,0 +1,50 @@
+uuid: 00a32230-9ff9-41ba-8342-58bd6fed079f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.colorbox
+    - field.field.media.image.field_general_highlights_slider
+    - field.field.media.image.field_media_image
+    - field.field.media.image.field_short_caption
+    - field.field.media.image.field_welcome_photo
+    - image.style.1x1_small
+    - image.style.scaled_original_wide
+    - media.type.image
+  module:
+    - colorbox
+    - lazy
+_core:
+  default_config_hash: xYfPHHBZQkNk_RxRo09i-DgOYihShkiAX1VbMh7MHAQ
+id: media.image.colorbox
+targetEntityType: media
+bundle: image
+mode: colorbox
+content:
+  field_media_image:
+    label: hidden
+    settings:
+      colorbox_node_style: 1x1_small
+      colorbox_node_style_first: ''
+      colorbox_image_style: scaled_original_wide
+      colorbox_gallery: page
+      colorbox_gallery_custom: ''
+      colorbox_caption: custom
+      colorbox_caption_custom: '[media:field_short_caption]'
+    third_party_settings:
+      lazy:
+        lazy_image: '1'
+        placeholder_style: ''
+        data_uri: false
+    type: colorbox
+    weight: 0
+    region: content
+hidden:
+  created: true
+  field_general_highlights_slider: true
+  field_short_caption: true
+  field_welcome_photo: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

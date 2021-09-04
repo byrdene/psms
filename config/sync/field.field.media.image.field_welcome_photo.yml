@@ -1,0 +1,23 @@
+uuid: a17a7c8a-7852-4b4b-82bc-a47336f3e1f6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_welcome_photo
+    - media.type.image
+id: media.image.field_welcome_photo
+field_name: field_welcome_photo
+entity_type: media
+bundle: image
+label: 'Welcome Photo'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

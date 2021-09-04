@@ -1,0 +1,23 @@
+uuid: d334df5e-b1e1-42fd-9c15-8adc9b967f15
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_feature_on_homepage
+    - node.type.testimonial
+id: node.testimonial.field_feature_on_homepage
+field_name: field_feature_on_homepage
+entity_type: node
+bundle: testimonial
+label: 'Feature on Homepage'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

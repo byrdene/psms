@@ -1,0 +1,52 @@
+uuid: 6e10caf0-2847-40bc-96c4-8f1779f72d8c
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.welcome_photo
+    - field.field.media.image.field_general_highlights_slider
+    - field.field.media.image.field_media_image
+    - field.field.media.image.field_short_caption
+    - field.field.media.image.field_welcome_photo
+    - lazy.settings
+    - media.type.image
+    - responsive_image.styles.landscape_contained_4x3
+  module:
+    - lazy
+    - responsive_image
+_core:
+  default_config_hash: xYfPHHBZQkNk_RxRo09i-DgOYihShkiAX1VbMh7MHAQ
+id: media.image.welcome_photo
+targetEntityType: media
+bundle: image
+mode: welcome_photo
+content:
+  field_media_image:
+    label: hidden
+    settings:
+      responsive_image_style: landscape_contained_4x3
+      image_link: ''
+    third_party_settings:
+      lazy:
+        placeholder_style: ''
+        lazy_image: '1'
+        data_uri: false
+    type: lazy_responsive_image
+    weight: 0
+    region: content
+  field_short_caption:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  created: true
+  field_general_highlights_slider: true
+  field_welcome_photo: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

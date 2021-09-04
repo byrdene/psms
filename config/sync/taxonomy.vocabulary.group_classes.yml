@@ -1,0 +1,8 @@
+uuid: 262d6bbf-57e1-44d8-8695-3769281d5f88
+langcode: en
+status: true
+dependencies: {  }
+name: 'Group Classes'
+vid: group_classes
+description: ''
+weight: 0

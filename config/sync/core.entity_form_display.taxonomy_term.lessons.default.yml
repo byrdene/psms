@@ -1,0 +1,25 @@
+uuid: 4703fcdc-0990-43b3-b72d-a1714f248df7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.lessons.field_inactive
+    - taxonomy.vocabulary.lessons
+id: taxonomy_term.lessons.default
+targetEntityType: taxonomy_term
+bundle: lessons
+mode: default
+content:
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  description: true
+  field_inactive: true
+  path: true
+  status: true

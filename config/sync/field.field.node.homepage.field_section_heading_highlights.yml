@@ -1,0 +1,21 @@
+uuid: a10d29b6-0a3b-4c67-92d4-d61613c27596
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_section_heading_highlights
+    - node.type.homepage
+id: node.homepage.field_section_heading_highlights
+field_name: field_section_heading_highlights
+entity_type: node
+bundle: homepage
+label: 'Section Heading'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: Highlights
+default_value_callback: ''
+settings: {  }
+field_type: string

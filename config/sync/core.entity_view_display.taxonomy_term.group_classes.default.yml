@@ -1,0 +1,16 @@
+uuid: 099775c4-4519-409c-aa3b-5cdae26321de
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.group_classes.field_inactive
+    - taxonomy.vocabulary.group_classes
+id: taxonomy_term.group_classes.default
+targetEntityType: taxonomy_term
+bundle: group_classes
+mode: default
+content: {  }
+hidden:
+  description: true
+  field_inactive: true
+  search_api_excerpt: true

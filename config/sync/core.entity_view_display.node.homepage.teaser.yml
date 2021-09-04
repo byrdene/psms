@@ -1,0 +1,53 @@
+uuid: c21b0ecd-8045-420a-aa93-d4e74ee8e6b8
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.homepage.body
+    - field.field.node.homepage.field_announcements
+    - field.field.node.homepage.field_featured_article
+    - field.field.node.homepage.field_featured_testimonial
+    - field.field.node.homepage.field_gallery_caption
+    - field.field.node.homepage.field_photo_gallery
+    - field.field.node.homepage.field_quicklinks
+    - field.field.node.homepage.field_section_heading_community
+    - field.field.node.homepage.field_section_heading_highlights
+    - field.field.node.homepage.field_section_heading_welcome
+    - field.field.node.homepage.field_upcoming_events
+    - field.field.node.homepage.field_welcome_photos
+    - node.type.homepage
+  module:
+    - text
+    - user
+id: node.homepage.teaser
+targetEntityType: node
+bundle: homepage
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_announcements: true
+  field_featured_article: true
+  field_featured_testimonial: true
+  field_gallery_caption: true
+  field_photo_gallery: true
+  field_quicklinks: true
+  field_section_heading_community: true
+  field_section_heading_highlights: true
+  field_section_heading_welcome: true
+  field_upcoming_events: true
+  field_welcome_photos: true
+  search_api_excerpt: true

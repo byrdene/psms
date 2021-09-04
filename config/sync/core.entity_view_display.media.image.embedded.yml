@@ -4,7 +4,10 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.media.embedded
+    - field.field.media.image.field_general_highlights_slider
     - field.field.media.image.field_media_image
+    - field.field.media.image.field_short_caption
+    - field.field.media.image.field_welcome_photo
     - lazy.settings
     - media.type.image
     - responsive_image.styles.embedded
@@ -33,6 +36,9 @@ content:
     region: content
 hidden:
   created: true
+  field_general_highlights_slider: true
+  field_short_caption: true
+  field_welcome_photo: true
   name: true
   search_api_excerpt: true
   thumbnail: true

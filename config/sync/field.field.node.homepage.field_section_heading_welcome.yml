@@ -1,0 +1,21 @@
+uuid: 97c29d0f-c3d7-49f0-8a04-524d529d935a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_section_heading_welcome
+    - node.type.homepage
+id: node.homepage.field_section_heading_welcome
+field_name: field_section_heading_welcome
+entity_type: node
+bundle: homepage
+label: 'Section Heading'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: Welcome
+default_value_callback: ''
+settings: {  }
+field_type: string
