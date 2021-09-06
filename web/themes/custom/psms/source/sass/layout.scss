@@ -1,16 +1,75 @@
 @import "0-config/__config";
 
-// LAYOUT: Macro arrangement of a web page, including any grid systems.
-// Read more about SMACSS categorization for Drupal Themes: https://www.drupal.org/node/1887922
+// ==========================================================================
+//   LAYOUT: positioning, widths, gutters.
+// ==========================================================================
 
-// This file is compiled separately so we can pull in config dependencies above
-// while also maintaining Drupal's SMACSS structure.
+// General container level styles and resets
+.layout-container {
+  div,
+  section {
+    position: relative;
+    @include clearfix;
+  }
+}
 
-@import "2-layout/regions";
+.field,
+.block {
+  position: relative;
+  @include clearfix;
+}
+
+.container {
+  @include center-block;
+}
+
+// Widths
+.full-width {
+  width: 100%;
+  max-width: none;
+}
+
+.page-width {
+  width: 100%;
+  max-width: $page-width;
+}
+
+.medium-width {
+  width: 100%;
+  max-width: $content-width;
+}
+
+.small-width {
+  width: 100%;
+  max-width: $body-width;
+}
+
+
+// Gutters
+.padded-row {
+  padding: 0 $gutter;
+  @include bp(medium, up) {
+    padding: 0 $gutter*2;
+  }
+}
+
+.padded-column {
+  padding: $gutter 0 $gutter*3 0;
+  @include bp(medium, up) {
+    padding: $gutter*2 0 $gutter*4 0;
+  }
+}
+
+.section {
+  & + .section {
+    margin-top: $gutter*2;
+    @include bp(large, up) {
+      padding: 0 $gutter*4;
+    }
+  }
+}
+
+// Partials
 @import "2-layout/header";
-@import "2-layout/banner";
-@import "2-layout/pre-content";
-@import "2-layout/primary-content";
-@import "2-layout/post-content";
 @import "2-layout/footer";
-@import "2-layout/homepage";
+

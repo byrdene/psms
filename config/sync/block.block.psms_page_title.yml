@@ -1,0 +1,26 @@
+uuid: ada9fb19-bc24-4050-acfe-3a61c584eb29
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - psms
+_core:
+  default_config_hash: 8yptDf6WrXxeyevUz4nP5vfr7BtxQqCBMninhV2IJ1g
+id: psms_page_title
+theme: psms
+region: content
+weight: -30
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: '/node/*'
+    negate: true

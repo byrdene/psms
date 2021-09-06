@@ -10,7 +10,7 @@ id: node.person.field_main_image
 field_name: field_main_image
 entity_type: node
 bundle: person
-label: 'Main Image'
+label: 'Headshot or Photo'
 description: ''
 required: false
 translatable: true

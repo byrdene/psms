@@ -1,0 +1,21 @@
+uuid: b8eaa0c7-b663-403a-b1df-f1d6b27b2967
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_metatags
+    - node.type.person
+  module:
+    - metatag
+id: node.person.field_metatags
+field_name: field_metatags
+entity_type: node
+bundle: person
+label: 'Search engine optimization'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag

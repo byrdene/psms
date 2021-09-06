@@ -13,3 +13,9 @@ nav,
     display: none;
   }
 }
+
+.contextual {
+  .trigger {
+    position: absolute !important;
+  }
+}

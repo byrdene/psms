@@ -4,9 +4,11 @@ status: true
 dependencies:
   config:
     - field.field.node.article.body
+    - field.field.node.article.field_metatags
     - node.type.article
   module:
     - allowed_formats
+    - metatag
     - text
 id: node.article.default
 targetEntityType: node
@@ -25,6 +27,13 @@ content:
       allowed_formats:
         hide_help: '1'
         hide_guidelines: '1'
+    region: content
+  field_metatags:
+    weight: 26
+    settings:
+      sidebar: true
+    third_party_settings: {  }
+    type: metatag_firehose
     region: content
   status:
     type: boolean_checkbox

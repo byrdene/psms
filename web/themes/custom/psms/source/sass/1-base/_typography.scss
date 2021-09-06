@@ -73,7 +73,9 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   @include font-size($h1-font-size-mobile);
   @include font-weight(bold);
-  color: $base-font-color;
+  color: $primary-color;
+  font-family: $dancing;
+  text-transform: capitalize;
   @include bp($main-nav, up) {
     @include font-size($h1-font-size);
   }
@@ -91,8 +93,8 @@ h2 {
 h3 {
   @include font-size($h3-font-size-mobile);
   @include font-weight(bold);
-  color: $primary-color;
-  text-transform: uppercase;
+  color: $black;
+  text-transform: capitalize;
   @include bp($main-nav, up) {
     @include font-size($h3-font-size);
   }

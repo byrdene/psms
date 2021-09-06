@@ -1,0 +1,20 @@
+uuid: 02d2b676-52bf-4cdb-8be3-4930dc2f511a
+langcode: en
+status: true
+dependencies:
+  theme:
+    - psms
+_core:
+  default_config_hash: PffmQ-ABSz5tFjWmVsR7NesunDnEivvopnJnBjl8KNE
+id: psms_local_actions
+theme: psms
+region: content
+weight: -10
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

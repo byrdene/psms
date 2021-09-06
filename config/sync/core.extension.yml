@@ -71,6 +71,8 @@ module:
   node: 0
   options: 0
   page_cache: 0
+  paragraph_text_block: 0
+  paragraphs_type_permissions: 0
   path: 0
   path_alias: 0
   project_admin: 0
@@ -109,6 +111,7 @@ theme:
   stark: 0
   claro: 0
   gin: 0
+  psms: 0
 profile: psms_profile
 _core:
   default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc

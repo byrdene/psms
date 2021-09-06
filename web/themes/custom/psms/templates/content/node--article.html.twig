@@ -1,0 +1,24 @@
+{% set classes = [
+  'node',
+  'node--type-' ~ node.bundle|clean_class,
+  node.isSticky() ? 'node--sticky',
+  view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+] %}
+
+<div class="page-title-wrapper background">
+  <div class="page-title-content container page-width padded-row">
+    <div class="page-title-background">
+      <h1 class="page-title">{{ node.label }}</h1>
+    </div>
+  </div>
+</div>
+
+<div class="content-wrapper padded-column">
+
+<section {{ attributes.addClass(classes, 'container small-width padded-row')}}>
+
+  <div class="content-wrapper rte">{{ content.body }}</div>
+
+</section>
+
+</div>

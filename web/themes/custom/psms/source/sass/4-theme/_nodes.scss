@@ -20,18 +20,6 @@
   .field--name-body {
     clear: both;
   }
-  &.node--unpublished {
-    background-color: #fff4f4;
-  }
-  &.ds-2col-fluid {
-    .group-right {
-      .field {
-        & + .field:not(.field--name-node-title) {
-          margin-top: $vertical-spacing;
-        }
-      }
-    }
-  }
 }
 
 .node-preview-container {
@@ -73,11 +61,8 @@
 //    b. Teaser
 //    c. Teaser-small
 //    d. Card
-//    e. Banner
-//    f. Featured
-//    g. Sidebar
-//    h. Post content
-//    i. Search result
+//    e. Featured
+//    f. Search result
 //  ==========================================================================
 
 // Full
@@ -105,7 +90,6 @@
 
 // Teaser
 .node--view-mode-teaser {
-  @include responsive-display-2col($width: 30%, $gutter: 2.5%, $image-container: left);
   .field--name-node-title {
     h2, h3 {
       @extend %teaser-titles;
@@ -128,7 +112,6 @@
   }
 }
 
-
 // Card
 .node--view-mode-card {
   .field--name-node-title {
@@ -142,26 +125,8 @@
   }
 }
 
-// Banner
-.node--view-mode-banner {
-  @include responsive-display-2col($width: 30%, $gutter: 2.5%, $image-container: right);
-  &.group-one-column {
-    .field {
-      text-align: center;
-    }
-  }
-}
-
 // Featured
 .node--view-mode-featured {}
-
-// Sidebar
-.node--view-mode-sidebar {}
-
-
-// Post content
-.node--view-mode-post-content {}
-
 
 // Search result
 .node--view-mode-search-result {
@@ -183,7 +148,6 @@
 //  3. Import the partials of individual content types
 //  ==========================================================================
 
+@import "content-types/homepage";
 @import "content-types/page";
-@import "content-types/bio";
 @import "content-types/event";
-@import "content-types/news";

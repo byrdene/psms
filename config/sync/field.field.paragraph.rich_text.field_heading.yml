@@ -1,0 +1,21 @@
+uuid: ad443fd6-68e0-4e55-ab00-3ef019e6378a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_heading
+    - paragraphs.paragraphs_type.rich_text
+_core:
+  default_config_hash: hMg-lDr8QazM3Bksdc_KBjjxVOfjp-YAUpNmgLB68UI
+id: paragraph.rich_text.field_heading
+field_name: field_heading
+entity_type: paragraph
+bundle: rich_text
+label: Heading
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

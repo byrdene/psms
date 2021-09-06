@@ -2,44 +2,80 @@
 //   SITE HEADER
 // ==========================================================================
 
-#site-header {
-  @include clearfix;
-  background: $header-background-color;
-  position: relative;
-  height: $mobile-header-height;
-  @include bp($main-nav, up) {
-    height: auto;
+header {
+  .nav-wrapper {
+    display: flex;
+    justify-content: flex-end;
   }
-  .container {
-    @include center-block;
-    max-width: $page-width;
-
+  #site-header {
+    position: relative;
+    border-top: 4px solid $black;
+    border-bottom: 8px solid $black;
     @include bp($main-nav, up) {
-      .region-header {
-        width: ($logo-mx-medium +  $gutter*2 + $gutter*2);
-        float: left;
+      margin-top: -65px;
+    }
+    .header-background-wrapper {
+      img {
+        max-width: none;
+        width: 100%;
       }
-      .region-navigation-secondary {
+    }
+    .logo-wrapper {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%;
+      text-align: center;
+      .logo {
         position: relative;
-        float:right;
-        width: calc(100% - (#{$logo-mx-medium} + (#{$gutter}*4)));
+        display: inline-block;
+        padding: 10px 40px;
+        z-index: 1;
+        width: 200px;
+        &:before {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          content: "";
+          background-color: rgba(255, 255, 255, .5);
+          @include border-radius(6px);
+          box-shadow: 3px 3px 8px rgba(0, 0, 0, .5);
+          z-index: -1;
+        }
       }
-    }
-    @include bp(large, up) {
-      .region-header {
-        width: ($logo-mx-large +  $gutter*2 + $gutter*2);
+      a {
+        &:hover {
+          .logo {
+            &:before {
+              background-color: rgba(255, 255, 255, .8);
+            }
+          }
+        }
       }
-      .region-navigation-secondary {
-        width: calc(100% - (#{$logo-mx-large} + (#{$gutter}*4)));
+      @include bp(small, up) {
+        .logo {
+          width: 300px;
+        }
       }
-    }
-    @include bp(x-large, up) {
-      .region-header {
-        width: ($logo-mx-xlarge +  $gutter*2 + $gutter*2);
+      @include bp(medium, up) {
+        .logo {
+          width: 400px;
+        }
       }
-      .region-navigation-secondary {
-        width: calc(100% - (#{$logo-mx-xlarge} + (#{$gutter}*4)));
+      @include bp(large, up) {
+        .logo {
+          width: 450px;
+        }
+      }
+      @include bp(x-large, up) {
+        .logo {
+          margin-top: 40px;
+        }
       }
     }
   }
 }
+

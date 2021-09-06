@@ -1,0 +1,14 @@
+{% set classes = [
+  'node',
+  'node--type-' ~ node.bundle|clean_class,
+  node.isSticky() ? 'node--sticky',
+] %}
+
+<div class="testimonial-wrapper container">
+  <div class="testimonial-content container page-width padded-row">
+    <div class="quote-wrapper">{{ content.body }}</div>
+    {% if content.field_attribution|render %}
+      <div class="quote-attribution">{{ content.field_attribution }}</div>
+    {% endif %}
+  </div>
+</div>

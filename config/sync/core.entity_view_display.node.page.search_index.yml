@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.search_index
     - field.field.node.page.body
+    - field.field.node.page.field_components
     - field.field.node.page.field_main_image
     - field.field.node.page.field_metatags
     - field.field.node.page.field_related_view
@@ -38,6 +39,7 @@ content:
     type: viewfield_default
     region: content
 hidden:
+  field_components: true
   field_main_image: true
   field_metatags: true
   links: true

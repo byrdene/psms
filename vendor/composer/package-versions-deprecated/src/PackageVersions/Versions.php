@@ -113,6 +113,7 @@ final class Versions
   'drupal/jquery_ui_touch_punch' => '1.0.0@1.0.0',
   'drupal/layout_paragraphs' => '1.0.0@1.0.0',
   'drupal/lazy' => '3.10.0@8.x-3.10',
+  'drupal/link_attributes' => '1.11.0@8.x-1.11',
   'drupal/linked_field' => '1.3.0@8.x-1.3',
   'drupal/linkit' => '6.0.0-beta2@6.0.0-beta2',
   'drupal/masquerade' => '2.0.0-beta4@8.x-2.0-beta4',
@@ -293,7 +294,7 @@ final class Versions
   'symfony/lock' => 'v4.4.27@6ca476d4ac992802f2a4043929f68f1818449486',
   'symfony/phpunit-bridge' => 'v5.3.7@2a1ff6e5a4521be1350bfce75784938e590d6342',
   'theseer/tokenizer' => '1.2.1@34a41e998c2183e22995f158c581e7b5e755ab9e',
-  'drupal/recommended-project' => 'dev-master@ff1b125192d8c9d82e4e0ebe24cd5dcea0da87c5',
+  'drupal/recommended-project' => 'dev-master@1844a7ae7f88056f6ca406af887ae277e49b1d70',
 );
 
     private function __construct()

@@ -14,3 +14,4 @@ permissions:
   - 'use text format basic_html'
   - 'use text format full_html'
   - 'view media'
+  - 'view paragraph content rich_text'

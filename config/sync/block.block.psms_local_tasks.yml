@@ -1,0 +1,22 @@
+uuid: 1a9d6a4f-675c-49bf-92e2-110fe418b64e
+langcode: en
+status: true
+dependencies:
+  theme:
+    - psms
+_core:
+  default_config_hash: c-06bbElRY5sKmglk74ppgTW93Et4-EJFyNiUZMb8JY
+id: psms_local_tasks
+theme: psms
+region: content
+weight: -20
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

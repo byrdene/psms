@@ -1,0 +1,38 @@
+uuid: b712aa07-449a-4446-8841-2dd34293adc7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.rich_text.field_custom_class
+    - field.field.paragraph.rich_text.field_heading
+    - field.field.paragraph.rich_text.field_heading_status
+    - field.field.paragraph.rich_text.field_text
+    - paragraphs.paragraphs_type.rich_text
+  module:
+    - text
+_core:
+  default_config_hash: 0zQBvlnU58u9N_di7XKbEfkuCvry4USq5LXpm9yQHiY
+id: paragraph.rich_text.default
+targetEntityType: paragraph
+bundle: rich_text
+mode: default
+content:
+  field_heading:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_text:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden:
+  field_custom_class: true
+  field_heading_status: true
+  search_api_excerpt: true

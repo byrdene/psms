@@ -1,0 +1,40 @@
+{% set classes = [
+  'node',
+  'node--type-' ~ node.bundle|clean_class,
+  node.isSticky() ? 'node--sticky',
+  view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+] %}
+
+<section {{ attributes.addClass(classes, 'container small-width padded-row')}}>
+  <div class="event-wrapper">
+    <div class="date-wrapper">
+      <div class="month">
+        {% if startdate | format_date('custom', 'm') == enddate | format_date('custom', 'm') %}
+        {{ startdate | format_date('custom', 'M') }}
+        {% else %}
+          <span class="multiple">{{ startdate | format_date('custom', 'M') }}-{{ enddate | format_date('custom', 'M') }}</span>
+        {% endif %}
+      </div>
+      <div class="date">
+        {% if startdate | format_date('custom', 'd') == enddate | format_date('custom', 'd') %}
+        {{ startdate | format_date('custom', 'd') }}
+        {% else %}
+          <span class="multiple">{{ startdate | format_date('custom', 'd') }}-{{ enddate | format_date('custom', 'd') }}</span>
+        {% endif %}
+      </div>
+    </div>
+    <div class="text-wrapper">
+      <h3 class="page-title">{{ node.label }}</h3>
+
+      {% if content.body|render %}
+          {{ content.body }}
+      {% endif %}
+
+      {% if content.field_button|render %}
+          {{ content.field_button }}
+      {% endif %}
+
+    </div>
+  </div>
+</section>
+

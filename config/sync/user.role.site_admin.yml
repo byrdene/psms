@@ -8,4 +8,5 @@ id: site_admin
 label: 'Site Admin'
 weight: 3
 is_admin: null
-permissions: {  }
+permissions:
+  - 'update paragraph content rich_text'

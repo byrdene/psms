@@ -5,12 +5,13 @@
     margin-right: .5em; // adjust for whether icon has a visible background
     a {
       // Uncomment if icon has a square or round background
-      //@include dl-rounded-icon($bgcolor: $action-color, $radius: 50%);
+      @include dl-rounded-icon($bgcolor: $black, $radius: 50%);
       //@include dl-square-icon($action-color);
 
       &:hover,
       &:active {
         text-decoration: none;
+        background-color: $green;
       }
     }
 
@@ -18,28 +19,28 @@
 
     // usually bigger for mobile to better suit finger clicks!
     .facebook {
-      @include dl-icon-linked($icon-facebook, 45px, $white, $icomoon, 45px, 45px);
+      @include dl-icon-linked($icon-facebook, 30px, $white, $icomoon, 45px, 45px);
     }
     .twitter {
-      @include dl-icon-linked($icon-twitter, 45px, $white, $icomoon, 45px, 45px);
+      @include dl-icon-linked($icon-twitter, 30px, $white, $icomoon, 45px, 45px);
     }
     .instagram {
-      @include dl-icon-linked($icon-instagram, 45px, $white, $icomoon, 45px, 45px);
+      @include dl-icon-linked($icon-instagram, 30px, $white, $icomoon, 45px, 45px);
     }
 
     // can be a little smaller for desktop
-    @include bp(large, up) {
-      .facebook, .twitter, .instagram {
-        width: 35px;
-        height: 35px;
-        &:before {
-          font-size: 35px;
-          width: 35px;
-          height: 35px;
-          line-height: 35px;
-        }
-      }
-    }
+    //@include bp(large, up) {
+    //  .facebook, .twitter, .instagram {
+    //    width: 35px;
+    //    height: 35px;
+    //    &:before {
+    //      font-size: 20px;
+    //      width: 35px;
+    //      height: 35px;
+    //      line-height: 35px;
+    //    }
+    //  }
+    //}
 
 
     // ICON with Square or Circle background (font size is smaller than background)

@@ -1,16 +1,193 @@
 @import "0-config/__config";
 
-// THEME: purely visual styling (“look-and-feel”) for a component.
-// Read more about SMACSS categorization for Drupal Themes: https://www.drupal.org/node/1887922
-// When following SMCASS, this would be used for dark/light themes (not general styling): https://smacss.com/book/type-theme
+// ==========================================================================
+//   THEME: purely visual styling (“look-and-feel”), styles not particular
+//   to a single component.
+// ==========================================================================
 
-// This file is compiled separately so we can pull in config dependencies above
-// while also maintaining Drupal's SMACSS structure.
+.primary-color {
+  color: $primary-color;
+}
 
-@import "4-theme/fields";
-@import "4-theme/nodes";
-@import "4-theme/blocks";
-@import "4-theme/views";
+.secondary-color {
+  color: $secondary-color;
+}
+
+.action-color {
+  color: $action-color;
+}
+
+@mixin color-blocks-right {
+  &:after {
+    display: inline-block;
+    margin-left: .25em;
+    content: url("../../static/images/color-blocks.png");
+  }
+}
+
+@mixin color-blocks-left {
+  &:before {
+    display: inline-block;
+    margin-right: .25em;
+    content: url("../../static/images/color-blocks.png");
+  }
+}
+
+.page-title-wrapper {
+  &.background {
+    margin-top: $gutter;
+    background-image: url("../../static/images/page-title-bg.png");
+    background-repeat: repeat-x;
+    display: flex;
+    align-items: center;
+    .page-title-content {
+      display: flex;
+      min-height: 100px;
+      justify-content: center;
+      .page-title-background {
+        display: flex;
+        align-items: center;
+        background-color: $white;
+        padding: $gutter/4 $gutter;
+      }
+      .page-title {
+        margin-top: $gutter;
+      }
+    }
+  }
+}
+
+// Events
+.view-event-listing {
+  .views-row {
+    & + .views-row {
+      margin-top: $gutter;
+      @include bp(medium, up) {
+        margin-top: $gutter*2;
+      }
+    }
+  }
+}
+
+.node--type-event {
+  .event-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .date-wrapper {
+    width: 120px;
+    padding: $gutter*1.5 0;
+    float: left;
+    background-color: $fuschia-medium;
+    border: 6px solid $secondary-color;
+    color: $white;
+    @include font-weight(bold);
+    display: flex;
+    flex-direction: column;
+    .month,
+    .date {
+      margin: 0 auto;
+    }
+    .month {
+      @include font-size(24px);
+      line-height: 24px;
+      text-transform: uppercase;
+    }
+    .date {
+      @include font-size(22px);
+      line-height: 22px;
+    }
+  }
+  .text-wrapper {
+    width: calc(100% - 120px);
+    float: left;
+    padding-left: $gutter*2;
+  }
+}
+
+
+
+.node--type-homepage {
+  // Homepage
+  .news-section {
+    .news-wrapper {
+      background-color: $gold-medium;
+      border: 4px solid $gold;
+      @include border-radius(6px);
+      padding: $gutter;
+      position: relative;
+      min-height: 110px;
+      .news-heading {
+        position: absolute;
+        bottom: 0;
+        right: $gutter/2;
+        h2 {
+          text-transform: uppercase;
+          color: #e0a109;
+          font-size: 60px;
+          line-height: 1;
+          margin: 0;
+          padding: 0;
+        }
+      }
+      .announcements-wrapper {
+        div {
+          .field {
+            @include font-weight(bold);
+            a {
+              display: inline-block;
+              margin-left: 2px;
+              margin-right: 2px;
+              padding: 4px 6px;
+              //font-family: Menlo, Monaco, "Courier New", Courier, monospace;
+              font-size: 0.78em;
+              line-height: 1.5;
+              color: $primary-color;
+              background: $white;
+              text-decoration: none !important;
+              @include border-radius(4px);
+              &:hover {
+                color: $white;
+                background: $primary-color;
+              }
+            }
+            & +.field {
+              margin-top: $gutter/2;
+            }
+          }
+        }
+      }
+    }
+  }
+  section {
+    h2 {
+      @include font-size(36px);
+      text-transform: uppercase;
+      @include bp($main-nav, up) {
+        @include font-size(40px);
+      }
+    }
+    &.welcome-section {
+      h2 {
+        @include color-blocks-right;
+      }
+    }
+    &.community-section {
+      h2 {
+        @include color-blocks-left;
+      }
+    }
+    &.highlights-section {
+      h2 {
+        @include color-blocks-right;
+      }
+    }
+  }
+}
+
+//@import "4-theme/nodes";
+//@import "4-theme/views";
 
 //.gin--classic-toolbar {
 //  .toolbar-tab {

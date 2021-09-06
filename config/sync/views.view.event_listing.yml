@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
     - node.type.event
   module:
     - node
@@ -56,7 +55,8 @@ display:
       row:
         type: 'entity:node'
         options:
-          view_mode: teaser
+          relationship: none
+          view_mode: default
       fields:
         title:
           id: title
@@ -218,11 +218,15 @@ display:
   page_1:
     display_plugin: page
     id: page_1
-    display_title: Page
+    display_title: 'Full Event Listing'
     position: 1
     display_options:
       display_extenders: {  }
       path: event-listing
+      display_description: ''
+      css_class: 'container small-width padded-row'
+      defaults:
+        css_class: false
     cache_metadata:
       max-age: -1
       contexts:

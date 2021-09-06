@@ -1,0 +1,63 @@
+{% set classes = [
+  'node',
+  'node--type-' ~ node.bundle|clean_class,
+] %}
+
+<div {{ attributes.addClass(classes, 'padded-column')}}>
+
+{#  News section #}
+  {% if content.field_announcements|render %}
+  <section class="section news-section container medium-width padded-row">
+    <div class="news-wrapper">
+      <div class="news-heading"><h2>News</h2></div>
+      <div class="announcements-wrapper">{{ content.field_announcements }}</div>
+    </div>
+  </section>
+  {% endif %}
+
+  {#  Welcome section #}
+  {% if content.field_welcome_photos|render %}
+    <section class="section welcome-section container page-width padded-row">
+  {% else %}
+    <section class="section welcome-section container small-width padded-row">
+  {% endif %}
+      <h2 class="home-heading primary-color">{{ content.field_section_heading_welcome.0 }}</h2>
+      <div class="welcome-text-wrapper">
+        {{ content.body }}
+        {{ content.field_quicklinks }}
+      </div>
+    {% if content.field_welcome_photos|render %}
+      <div class="welcome-photo-wrapper">{{ content.field_welcome_photos }}</div>
+    {% endif %}
+  </section>
+
+  {#  Community section #}
+    {% if content.field_featured_article|render or content.field_upcoming_events|render %}
+      <section class="section community-section container page-width padded-row">
+        <h2 class="home-heading secondary-color">{{ content.field_section_heading_community.0 }}</h2>
+        {% if content.field_featured_article|render %}
+          <div class="article-wrapper container small-width">{{ content.field_featured_article }}</div>
+        {% endif %}
+        {% if content.field_upcoming_events|render %}
+          <div class="events-wrapper">{{ content.field_upcoming_events }}</div>
+        {% endif %}
+      </section>
+    {% endif %}
+
+  {#  Highlights section #}
+  {% if content.field_photo_gallery|render %}
+    <section class="section highlights-section container page-width padded-row">
+      <h2 class="home-heading action-color">{{ content.field_section_heading_highlights.0 }}</h2>
+      <div class="gallery-wrapper">{{ content.field_photo_gallery }}</div>
+      {% if content.field_gallery_caption|render %}
+        <div class="gallery-caption-wrapper">{{ content.field_gallery_caption }}</div>
+      {% endif %}
+    </section>
+  {% endif %}
+
+  {#  Testimonials section #}
+  <section class="section testimonials-section container">
+    <div class="testimonials">{{ content.field_featured_testimonial }}</div>
+  </section>
+
+</div>

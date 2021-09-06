@@ -31,12 +31,12 @@ $body-width: 800px; // used to prevent text from getting too long
 
 //  2. Typography
 //  ==========================================================================
-$base-font-family: $open-sans; // variable defined in _fonts.scss
-$heading-font-family: $open-sans; // variable defined in _fonts.scss
+$base-font-family: $roboto; // variable defined in _fonts.scss
+$heading-font-family: $roboto; // variable defined in _fonts.scss
 $monospace-font-family: 'Lucida Console', 'Liberation Mono', 'Courier New', monospace, sans-serif;
 
 // Heading size
-$h1-font-size: 44px;
+$h1-font-size: 60px;
 $h1-font-size-tablet: $h1-font-size * .9;
 $h1-font-size-mobile: $h1-font-size * .8;
 $h2-font-size: 30px;
@@ -77,9 +77,9 @@ $base-border-radius: 0;
 //  4. Colors
 //  ==========================================================================
 // Branding Colors
-$primary-color:  $eggplant;
-$secondary-color: $dark-eggplant;
-$action-color: $orange;
+$primary-color:  $blue;
+$secondary-color: $fuschia;
+$action-color: $green;
 
 // Font Colors
 $base-font-color: $charcoal;
@@ -90,12 +90,9 @@ $link-color-visited: $action-color;
 
 // Layout Background Colors
 $base-background-color: $white;
-$header-background-color: $white;
-$banner-background-color: $ice;
-$pre-content-background-color: $white;
+$header-background-color: $primary-color;
 $main-background-color: $white;
-$post-content-background-color: $ice;
-$footer-background-color: $charcoal;
+$footer-background-color: $primary-color;
 $callout-background-color: $base-border-color; // used for "callout" block style
 
 // Admin Message Colors
