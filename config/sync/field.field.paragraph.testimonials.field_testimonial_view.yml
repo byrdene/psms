@@ -1,0 +1,55 @@
+uuid: 41f4effe-7927-45bb-945b-d4c089ab4614
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_testimonial_view
+    - paragraphs.paragraphs_type.testimonials
+    - views.view.testimonials
+  module:
+    - viewfield
+id: paragraph.testimonials.field_testimonial_view
+field_name: field_testimonial_view
+entity_type: paragraph
+bundle: testimonials
+label: 'Testimonial View'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    token_help: ''
+    display_id: block_2
+    arguments: ''
+    items_to_display: ''
+    target_uuid: 57d22654-46a7-482d-b83f-af075f9c70e0
+default_value_callback: ''
+settings:
+  force_default: true
+  allowed_views:
+    testimonials: testimonials
+    content: '0'
+    block_content: '0'
+    event_listing: '0'
+    files: '0'
+    frontpage: '0'
+    general_highlights_slider: '0'
+    media: '0'
+    media_library: '0'
+    moderated_content: '0'
+    user_admin_people: '0'
+    content_recent: '0'
+    redirect: '0'
+    taxonomy_term: '0'
+    watchdog: '0'
+    welcome_photos: '0'
+    who_s_new: '0'
+    who_s_online: '0'
+  allowed_display_types:
+    block: block
+    default: '0'
+    feed: '0'
+    page: '0'
+  handler: 'default:view'
+  handler_settings: {  }
+field_type: viewfield

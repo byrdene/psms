@@ -1,0 +1,19 @@
+uuid: 56ac94ea-5767-4363-90ee-bfef08d425ce
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_calendar_year
+    - paragraphs.paragraphs_type.calendar_intro
+id: paragraph.calendar_intro.field_calendar_year
+field_name: field_calendar_year
+entity_type: paragraph
+bundle: calendar_intro
+label: 'Calendar Year'
+description: 'E.g. 2021-2022'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

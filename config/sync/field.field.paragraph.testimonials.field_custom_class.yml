@@ -1,0 +1,19 @@
+uuid: 17faab01-cb1f-41d4-9429-b9246bb3bbf6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_custom_class
+    - paragraphs.paragraphs_type.testimonials
+id: paragraph.testimonials.field_custom_class
+field_name: field_custom_class
+entity_type: paragraph
+bundle: testimonials
+label: 'Custom Class(es)'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

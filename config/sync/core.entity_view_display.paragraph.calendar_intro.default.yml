@@ -1,0 +1,32 @@
+uuid: ce56f3c4-7b3c-4a43-ba8f-ecd3e409edb4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.calendar_intro.field_calendar_year
+    - field.field.paragraph.calendar_intro.field_printable_calendar
+    - paragraphs.paragraphs_type.calendar_intro
+id: paragraph.calendar_intro.default
+targetEntityType: paragraph
+bundle: calendar_intro
+mode: default
+content:
+  field_calendar_year:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_printable_calendar:
+    type: entity_reference_entity_view
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+hidden:
+  search_api_excerpt: true

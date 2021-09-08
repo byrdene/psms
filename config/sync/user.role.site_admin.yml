@@ -9,4 +9,15 @@ label: 'Site Admin'
 weight: 3
 is_admin: null
 permissions:
+  - 'create article content'
+  - 'create event content'
+  - 'create person content'
+  - 'create testimonial content'
+  - 'edit any article content'
+  - 'edit any event content'
+  - 'edit any homepage content'
+  - 'edit any page content'
+  - 'edit any person content'
+  - 'edit any testimonial content'
+  - 'update paragraph content calendar_intro'
   - 'update paragraph content rich_text'

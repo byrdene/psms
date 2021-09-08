@@ -1,0 +1,19 @@
+uuid: 95c37a3d-bae1-4d81-9483-73952c6f3807
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_custom_class
+    - paragraphs.paragraphs_type.instructors
+id: paragraph.instructors.field_custom_class
+field_name: field_custom_class
+entity_type: paragraph
+bundle: instructors
+label: 'Custom Class(es)'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -190,7 +190,7 @@ display:
           empty: false
           tokenize: false
           content:
-            value: '<div class="button-wrapper"><a href="/calendar" class="btn">All Events</a></div>'
+            value: '<a href="/calendar" class="button">All Events</a>'
             format: full_html
           plugin_id: text
       empty:

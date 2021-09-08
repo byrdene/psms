@@ -5,7 +5,10 @@ dependencies:
   config:
     - field.storage.node.field_components
     - node.type.page
+    - paragraphs.paragraphs_type.calendar_intro
+    - paragraphs.paragraphs_type.instructors
     - paragraphs.paragraphs_type.rich_text
+    - paragraphs.paragraphs_type.testimonials
   module:
     - entity_reference_revisions
 id: node.page.field_components
@@ -24,8 +27,20 @@ settings:
     negate: 0
     target_bundles:
       rich_text: rich_text
+      calendar_intro: calendar_intro
+      instructors: instructors
+      testimonials: testimonials
     target_bundles_drag_drop:
+      calendar_intro:
+        enabled: true
+        weight: 3
+      instructors:
+        enabled: true
+        weight: 6
       rich_text:
         enabled: true
         weight: 2
+      testimonials:
+        enabled: true
+        weight: 8
 field_type: entity_reference_revisions

@@ -1,0 +1,29 @@
+uuid: d4548fc3-106f-4ad5-8e36-cfc5a320e973
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_printable_calendar
+    - media.type.document
+    - paragraphs.paragraphs_type.calendar_intro
+id: paragraph.calendar_intro.field_printable_calendar
+field_name: field_printable_calendar
+entity_type: paragraph
+bundle: calendar_intro
+label: 'Printable Calendar'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      document: document
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

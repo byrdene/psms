@@ -17,26 +17,78 @@
   color: $action-color;
 }
 
-@mixin color-blocks-right {
-  &:after {
-    display: inline-block;
-    margin-left: .25em;
-    content: url("../../static/images/color-blocks.png");
-  }
+.centered {
+  text-align: center;
 }
 
-@mixin color-blocks-left {
+.large-text {
+  font-size: 1.25em;
+}
+
+@mixin color-blocks($direction:right, $size:large) {
+  $content: url("../../static/images/color-blocks.png");
+  @if $size == large {
+    $content: url("../../static/images/color-blocks.png");
+  } @else {
+    $content: url("../../static/images/color-blocks-sm.png");
+  }
+  @if $direction == right {
+    &:after {
+      display: inline-block;
+      margin-left: .25em;
+      content: $content;
+    }
+  } @else {
+    text-align: right;
+    &:before {
+      display: inline-block;
+      margin-right: .25em;
+      content: $content;
+    }
+  }
+
+}
+
+@mixin quote {
+  @include font-size(24px);
+  position: relative;
+  line-height: 30px;
+  @include font-weight(normal);
+  padding-left: $gutter*3.5;
+  padding-right: $gutter*2.5;
+  color: $primary-color;
   &:before {
-    display: inline-block;
-    margin-right: .25em;
-    content: url("../../static/images/color-blocks.png");
+    display: block;
+    position: absolute;
+    left: 0;
+    top: .25em;
+    font-size: 6.5em;
+    font-family: Georgia, serif;
+    content: "\201C";
+    color: inherit;
+  }
+  .quote-attribution {
+    text-transform: uppercase;
+    @include font-size(18px);
+    @include font-weight(bold);
+    margin-top: $gutter;
+    margin-left: $gutter;
+    position: relative;
+    color: inherit;
+    &:before {
+      position: absolute;
+      left: -($gutter);
+      content: "\2014";
+      color: inherit;
+      font-weight: inherit;
+    }
   }
 }
 
 .page-title-wrapper {
   &.background {
-    margin-top: $gutter;
-    background-image: url("../../static/images/page-title-bg.png");
+    margin-top: 0;
+    background-image: url("../../static/images/page-title-bg-sm.png");
     background-repeat: repeat-x;
     display: flex;
     align-items: center;
@@ -46,12 +98,23 @@
       justify-content: center;
       .page-title-background {
         display: flex;
+        flex-direction: column;
         align-items: center;
         background-color: $white;
         padding: $gutter/4 $gutter;
       }
       .page-title {
-        margin-top: $gutter;
+        margin-top: $gutter/2;
+        margin-bottom: 0;
+      }
+    }
+    @include bp(medium, up) {
+      margin-top: $gutter;
+      background-image: url("../../static/images/page-title-bg.png");
+      .page-title-content {
+        .page-title {
+          margin-top: $gutter;
+        }
       }
     }
   }
@@ -66,6 +129,10 @@
         margin-top: $gutter*2;
       }
     }
+  }
+  .view-footer {
+    margin-top: $gutter*2;
+    text-align: center;
   }
 }
 
@@ -106,7 +173,27 @@
   }
 }
 
+// Testimonials
+.testimonial-content {
+  @include quote();
+}
 
+.view-testimonials {
+  .views-row {
+    border-bottom: 4px solid $black;
+    background: $ice;
+    padding: $gutter*2 0;
+    &:first-of-type {
+      border-top: 4px solid $black;
+    }
+    &:nth-child(odd) {
+      background: $ice;
+    }
+    &:nth-child(even) {
+      background: $white;
+    }
+  }
+}
 
 .node--type-homepage {
   // Homepage
@@ -170,24 +257,156 @@
     }
     &.welcome-section {
       h2 {
-        @include color-blocks-right;
+        @include color-blocks(right);
+      }
+      .quicklinks-wrapper {
+        margin-top: $gutter;
+        a {
+          display: inline-block;
+          margin: 0 $gutter/2 $gutter/2 0;
+        }
+      }
+      .field--name-field-short-caption {
+        @extend %caption;
+      }
+      &.has-photos {
+        .welcome-text-wrapper {
+          margin-bottom: $gutter;
+        }
+        @include bp(medium, up) {
+          display: flex;
+          flex-direction: row;
+          .welcome-text-wrapper {
+            width: 65%;
+            padding-right: $gutter*2;
+            margin-bottom: $gutter;
+          }
+          .welcome-photo-wrapper {
+            width: 35%;
+          }
+        }
       }
     }
     &.community-section {
       h2 {
-        @include color-blocks-left;
+        @include color-blocks(left);
       }
     }
     &.highlights-section {
       h2 {
-        @include color-blocks-right;
+        @include color-blocks(right);
       }
+    }
+    &.testimonials-section {
+      background: $ice;
+      padding: $gutter*2 0;
+      border-top: 4px solid $black;
+      border-bottom: 4px solid $black;
+      .testimonial-wrapper {}
     }
   }
 }
 
+.component--type-calendar-intro {
+  margin-bottom: $gutter*2;
+  .printable-wrapper {
+    margin-bottom: $gutter;
+    text-align: center;
+  }
+  .year-wrapper {
+    clear: both;
+    text-align: center;
+  }
+  @include bp(small, up) {
+    .printable-wrapper {
+      float: right;
+      margin-bottom: $gutter/2;
+      text-align: left;
+    }
+  }
+}
+
+// Instructors
+.view-instructors {
+
+}
+
+// Pages
+.node--type-page {
+  .heading-wrapper {
+    margin-bottom: $gutter;
+  }
+  h2 {
+    @include color-blocks(right, small);
+  }
+}
+
+// Person
+.node--type-person {
+  &.has-photo {
+    .image-wrapper {
+      margin-bottom: $gutter;
+    }
+    @include bp(medium, up) {
+      .main-content-wrapper {
+        display: flex;
+        flex-direction: row-reverse;
+        .body-wrapper {
+          width: 65%;
+          padding-right: $gutter*2;
+        }
+        .image-wrapper {
+          width: 35%;
+        }
+      }
+    }
+  }
+  .statement-intro-wrapper {
+    margin-top: $gutter;
+    h2 {
+      font-family: $dancing;
+      text-align: center;
+      @include color-blocks(right,small);
+      @include font-size(30px);
+      @include bp(large, up) {
+        @include font-size(36px);
+      }
+    }
+  }
+  .statement-wrapper {
+    @include font-size(20px);
+    position: relative;
+    line-height: 28px;
+    @include font-weight(bold);
+    font-style: italic;
+    color: $primary-color;
+    margin: rem($vertical-spacing) 0 rem($vertical-spacing) $gutter*2;
+    padding: 0 $gutter*2;
+    border-left: 4px solid $gold;
+  }
+
+  &.node--view-mode-card {
+    h3 {
+      margin-bottom: 0;
+    }
+    .specialties-wrapper {
+      @include font-weight(bold);
+      @include font-size(14px);
+    }
+    .button-wrapper {
+      margin-top: $gutter/2;
+    }
+    .image-wrapper {
+       + .text-wrapper {
+         margin-top: $gutter/2;
+       }
+    }
+  }
+}
+
+
 //@import "4-theme/nodes";
-//@import "4-theme/views";
+@import "4-theme/views";
 
 //.gin--classic-toolbar {
 //  .toolbar-tab {

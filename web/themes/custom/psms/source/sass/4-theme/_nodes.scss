@@ -130,7 +130,6 @@
 
 // Search result
 .node--view-mode-search-result {
-  @include responsive-display-2col($width: 30%, $gutter: 2.5%, $image-container: left);
   max-width: $body-width;
   .field--name-node-title {
     h2, h3 {

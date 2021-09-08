@@ -1,0 +1,39 @@
+uuid: 0fe1b283-b314-4865-a018-fa633b1ee4a6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.instructors.field_custom_class
+    - field.field.paragraph.instructors.field_heading
+    - field.field.paragraph.instructors.field_heading_status
+    - field.field.paragraph.instructors.field_instructors_view
+    - paragraphs.paragraphs_type.instructors
+  module:
+    - viewfield
+id: paragraph.instructors.default
+targetEntityType: paragraph
+bundle: instructors
+mode: default
+content:
+  field_heading:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_instructors_view:
+    weight: 1
+    label: hidden
+    settings:
+      view_title: hidden
+      always_build_output: false
+      empty_view_title: hidden
+    third_party_settings: {  }
+    type: viewfield_default
+    region: content
+hidden:
+  field_custom_class: true
+  field_heading_status: true
+  search_api_excerpt: true

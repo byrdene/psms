@@ -17,14 +17,18 @@
 
   {#  Welcome section #}
   {% if content.field_welcome_photos|render %}
-    <section class="section welcome-section container page-width padded-row">
+    <section class="section welcome-section has-photos container page-width padded-row">
   {% else %}
     <section class="section welcome-section container small-width padded-row">
   {% endif %}
-      <h2 class="home-heading primary-color">{{ content.field_section_heading_welcome.0 }}</h2>
       <div class="welcome-text-wrapper">
+        <h2 class="home-heading primary-color">{{ content.field_section_heading_welcome.0 }}</h2>
         {{ content.body }}
-        {{ content.field_quicklinks }}
+        {% if content.field_quicklinks|render %}
+          <div class="quicklinks-wrapper">
+          {{ content.field_quicklinks }}
+          </div>
+        {% endif %}
       </div>
     {% if content.field_welcome_photos|render %}
       <div class="welcome-photo-wrapper">{{ content.field_welcome_photos }}</div>
@@ -33,7 +37,7 @@
 
   {#  Community section #}
     {% if content.field_featured_article|render or content.field_upcoming_events|render %}
-      <section class="section community-section container page-width padded-row">
+      <section class="section community-section container small-width padded-row">
         <h2 class="home-heading secondary-color">{{ content.field_section_heading_community.0 }}</h2>
         {% if content.field_featured_article|render %}
           <div class="article-wrapper container small-width">{{ content.field_featured_article }}</div>
@@ -43,6 +47,18 @@
         {% endif %}
       </section>
     {% endif %}
+
+      {% if content.field_featured_article|render and content.field_upcoming_events|render %}
+        <section class="section community-section container page-width padded-row">
+          <h2 class="home-heading secondary-color">{{ content.field_section_heading_community.0 }}</h2>
+          {% if content.field_featured_article|render %}
+            <div class="article-wrapper container small-width">{{ content.field_featured_article }}</div>
+          {% endif %}
+          {% if content.field_upcoming_events|render %}
+            <div class="events-wrapper">{{ content.field_upcoming_events }}</div>
+          {% endif %}
+        </section>
+      {% endif %}
 
   {#  Highlights section #}
   {% if content.field_photo_gallery|render %}

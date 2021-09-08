@@ -1,0 +1,19 @@
+uuid: e37a8c34-daaa-4fd7-b38b-311fd7984192
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_person_statement_intro
+    - node.type.person
+id: node.person.field_person_statement_intro
+field_name: field_person_statement_intro
+entity_type: node
+bundle: person
+label: 'Statement/Quote Intro'
+description: 'E.g. "Miss Alex says" or "Sarah believes"'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

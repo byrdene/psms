@@ -14,4 +14,7 @@ permissions:
   - 'use text format basic_html'
   - 'use text format full_html'
   - 'view media'
+  - 'view paragraph content calendar_intro'
+  - 'view paragraph content instructors'
   - 'view paragraph content rich_text'
+  - 'view paragraph content testimonials'

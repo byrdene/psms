@@ -1,0 +1,40 @@
+{% set classes = [
+  'node',
+  'node--type-' ~ node.bundle|clean_class,
+  node.isSticky() ? 'node--sticky',
+  view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+] %}
+
+<div class="page-title-wrapper background">
+  <div class="page-title-content container page-width padded-row">
+    <div class="page-title-background">
+      <h1 class="page-title">{{ node.label }}</h1>
+      <div class="centered large-text"><strong>{{ content.field_specialties }}</strong></div>
+    </div>
+  </div>
+</div>
+
+<div class="content-wrapper padded-column">
+
+  {% if content.field_main_image|render %}
+    <section {{ attributes.addClass(classes, 'container medium-width padded-row has-photo')}}>
+  {% else %}
+    <section {{ attributes.addClass(classes, 'container small-width padded-row')}}>
+  {% endif %}
+      <div class="main-content-wrapper">
+        {% if content.field_main_image|render %}
+          <div class="image-wrapper">{{ content.field_main_image }}</div>
+        {% endif %}
+        <div class="body-wrapper rte">{{ content.body }}</div>
+      </div>
+
+  {% if content.field_person_statement_intro|render %}
+    <div class="statement-intro-wrapper"><h2>{{ content.field_person_statement_intro.0 }}</h2></div>
+  {% endif %}
+  {% if content.field_personal_statement|render %}
+    <div class="statement-wrapper">{{ content.field_personal_statement }}</div>
+  {% endif %}
+
+</section>
+
+</div>

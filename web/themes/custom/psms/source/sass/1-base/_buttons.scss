@@ -12,7 +12,7 @@ input {
     background: $action-color;
     border: 1px solid $action-color;
     @include border-radius(4px);
-    padding: 1em 2em;
+    padding: .5em 1em;
     @include font-size(14px);
     @include font-weight(bold);
     line-height: 16px;

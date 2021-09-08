@@ -1,0 +1,10 @@
+uuid: d65996da-00ef-41dc-8605-da55588eb332
+langcode: en
+status: true
+dependencies: {  }
+id: calendar_intro
+label: 'Calendar Intro'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

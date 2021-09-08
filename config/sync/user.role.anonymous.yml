@@ -12,4 +12,7 @@ permissions:
   - 'access content'
   - 'search content'
   - 'view media'
+  - 'view paragraph content calendar_intro'
+  - 'view paragraph content instructors'
   - 'view paragraph content rich_text'
+  - 'view paragraph content testimonials'

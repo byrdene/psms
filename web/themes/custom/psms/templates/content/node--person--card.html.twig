@@ -1,0 +1,25 @@
+{% set classes = [
+  'node',
+  'node--type-' ~ node.bundle|clean_class,
+  node.isSticky() ? 'node--sticky',
+  view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+] %}
+
+<div {{ attributes.addClass(classes, 'person-wrapper container')}}>
+  <div class="person-content">
+    <div class="image-wrapper">
+      {% if content.field_main_image|render %}
+      {{ content.field_main_image }}
+      {% endif %}
+    </div>
+    <div class="text-wrapper">
+      <h3>{{ node.label }}</h3>
+      {% if content.field_specialties|render %}
+        <div class="specialties-wrapper">{{ content.field_specialties }}</div>
+      {% endif %}
+      {% if content.body|render %}
+        <div class="button-wrapper"><a href="{{ url }}" class="button">Read Bio</a></div>
+      {% endif %}
+    </div>
+  </div>
+</div>

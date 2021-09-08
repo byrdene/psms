@@ -1,0 +1,27 @@
+
+{%
+  set classes = [
+  'component',
+  'component--type-' ~ paragraph.bundle|clean_class,
+  'component-paragraph',
+  'container',
+  'page-width',
+  'padded-row'
+]
+%}
+
+<div{{ attributes.addClass(classes) }}>
+  <div class="component-wrapper">
+    <div class="component-content">
+
+      <div class="printable-wrapper">
+        <a href="{{ content.field_printable_calendar['#items'].entity|file_url }}" class="button">Print Calendar</a>
+      </div>
+
+      <div class="year-wrapper">
+        <h2>{{ content.field_calendar_year.0 }}</h2>
+      </div>
+
+    </div>
+  </div>
+</div>

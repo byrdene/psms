@@ -1,0 +1,39 @@
+uuid: a584f70a-0867-4c7f-80fe-59765bb9374a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.testimonials.field_custom_class
+    - field.field.paragraph.testimonials.field_heading
+    - field.field.paragraph.testimonials.field_heading_status
+    - field.field.paragraph.testimonials.field_testimonial_view
+    - paragraphs.paragraphs_type.testimonials
+  module:
+    - viewfield
+id: paragraph.testimonials.default
+targetEntityType: paragraph
+bundle: testimonials
+mode: default
+content:
+  field_heading:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_testimonial_view:
+    weight: 1
+    label: hidden
+    settings:
+      view_title: hidden
+      empty_view_title: hidden
+      always_build_output: false
+    third_party_settings: {  }
+    type: viewfield_default
+    region: content
+hidden:
+  field_custom_class: true
+  field_heading_status: true
+  search_api_excerpt: true
