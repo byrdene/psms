@@ -120,6 +120,21 @@
   }
 }
 
+body.path-user {
+  .page-title-wrapper {
+    &.background {
+      background-image: none;
+      margin-top: 0;
+      .page-title-content {
+        padding-bottom: $gutter;
+        .page-title {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}
+
 // Events
 .view-event-listing {
   .views-row {
@@ -178,19 +193,22 @@
   @include quote();
 }
 
+
 .view-testimonials {
-  .views-row {
-    border-bottom: 4px solid $black;
-    background: $ice;
-    padding: $gutter*2 0;
-    &:first-of-type {
-      border-top: 4px solid $black;
-    }
-    &:nth-child(odd) {
+  &.view-display-id-block_2 { // specific to view that displays all of them
+    .views-row {
+      border-bottom: 4px solid $black;
       background: $ice;
-    }
-    &:nth-child(even) {
-      background: $white;
+      padding: $gutter*2 0;
+      &:first-of-type {
+        border-top: 4px solid $black;
+      }
+      &:nth-child(odd) {
+        background: $ice;
+      }
+      &:nth-child(even) {
+        background: $white;
+      }
     }
   }
 }

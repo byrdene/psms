@@ -1,0 +1,19 @@
+uuid: c6a3b7d5-795c-4430-9bce-75f0965d7674
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - text
+id: paragraph.field_offerings_intro
+field_name: field_offerings_intro
+entity_type: paragraph
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -73,11 +73,19 @@ function project_utilities_form_alter(&$form, &$form_state, $form_id) {
   $uid = $user->get('uid')->value;
   if (($uid == 1) || (in_array('developer', $user_role))) {
     $form['field_related_view']['#access'] = TRUE;
+    $form['field_featured_testimonial']['#access'] = TRUE;
+    $form['field_upcoming_events']['#access'] = TRUE;
     $form['field_components']['widget'][0]['subform']['field_custom_class']['#access'] = TRUE;
+    $form['field_components']['widget'][0]['subform']['field_offerings']['#access'] = TRUE;
+
+
   }
   else {
     $form['field_related_view']['#access'] = FALSE;
+    $form['field_featured_testimonial']['#access'] = FALSE;
+    $form['field_upcoming_events']['#access'] = FALSE;
     $form['field_components']['widget'][0]['subform']['field_custom_class']['#access'] = FALSE;
+    $form['field_components']['widget'][0]['subform']['field_offerings']['#access'] = FALSE;
   }
 
 }

@@ -1,44 +1,29 @@
-uuid: 1eb545eb-2bb0-486f-bbb3-7e0bb01a4846
+uuid: 4a263307-ff35-419e-af2c-6c9ae9095213
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_welcome_photos
+    - media.type.image
     - node.type.homepage
-  module:
-    - viewfield
 id: node.homepage.field_welcome_photos
 field_name: field_welcome_photos
 entity_type: node
 bundle: homepage
 label: 'Welcome Photos'
-description: ''
+description: 'A random photo will display from among the photos added here.'
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  force_default: false
-  allowed_views:
-    content: '0'
-    block_content: '0'
-    files: '0'
-    frontpage: '0'
-    media: '0'
-    media_library: '0'
-    moderated_content: '0'
-    user_admin_people: '0'
-    content_recent: '0'
-    redirect: '0'
-    taxonomy_term: '0'
-    watchdog: '0'
-    who_s_new: '0'
-    who_s_online: '0'
-  allowed_display_types:
-    block: block
-    default: '0'
-    feed: '0'
-    page: '0'
-  handler: 'default:view'
-  handler_settings: {  }
-field_type: viewfield
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

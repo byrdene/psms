@@ -1,0 +1,32 @@
+uuid: 681b9908-7b67-4b08-9970-bff47064bfca
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.gallery_slider.field_custom_class
+    - field.field.paragraph.gallery_slider.field_gallery_images
+    - field.field.paragraph.gallery_slider.field_heading
+    - field.field.paragraph.gallery_slider.field_heading_status
+    - paragraphs.paragraphs_type.gallery_slider
+  module:
+    - media_library
+_core:
+  default_config_hash: Indl3gWlyjNmuQZXUUQGFoBuZtLoz5SvRomAUaEfqiU
+id: paragraph.gallery_slider.default
+targetEntityType: paragraph
+bundle: gallery_slider
+mode: default
+content:
+  field_gallery_images:
+    type: media_library_widget
+    weight: 0
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  field_custom_class: true
+  field_heading: true
+  field_heading_status: true
+  status: true

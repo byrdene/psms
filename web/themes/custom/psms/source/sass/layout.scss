@@ -44,6 +44,11 @@
   max-width: $body-width;
 }
 
+.x-small-width {
+  width: 100%;
+  max-width: 640px;
+}
+
 
 // Gutters
 .padded-row {

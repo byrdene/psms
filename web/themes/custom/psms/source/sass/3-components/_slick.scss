@@ -8,8 +8,8 @@ $carouselButtonSizeLarge:         80px; // includes bg
 $carouselIcon:                    25px; // font size
 $carouselIconSmall:               20px; // font size
 $carouselIconColor:               $white;
-$carouselIconBackground:          $primary-color;
-$carouselIconBackgroundHover:     $action-color;
+$carouselIconBackground:          $action-color;
+$carouselIconBackgroundHover:     $primary-color;
 $nextIconPosition:                3em;
 $prevIconPosition:                3em;
 
@@ -303,8 +303,7 @@ $prevIconPosition:                3em;
 // CAROUSEL CUSTOMIZATIONS & OVERRIDES
 //************************************
 
-.section--type-gallery-carousel,
-.entityqueue-carousel {
+.component--type-gallery-carousel {
   .slick-slider {
     .slick-list {
       margin: 0;
@@ -355,71 +354,72 @@ $prevIconPosition:                3em;
   }
 }
 
-.section--type-gallery-slider {
-   .slick-slider {
-     margin: 0 $gutter;
-     .slick-list {
-       margin: 0;
-     }
-     .slick-slide {
-       position: relative;
-       vertical-align: middle;
-       padding: 10px;
-     }
+.component--type-gallery-slider {
+  .slick-slider {
+    //margin: 0 $gutter; // place gutters on containers?
+    margin: 0;
+    .slick-list {
+      margin: 0;
+    }
+    .slick-slide {
+      position: relative;
+      vertical-align: middle;
+      padding: 10px;
+    }
 
-     .slick-prev {
-       top: calc(50% - 15px);
-       left: -($gutter/2);
-       z-index: 1;
-       &:before {
-         border: 2px solid $white;
-       }
-       @include bp(large, up) {
-         top: calc(50% - 20px);
-         //left: $gutter;
-         //width: $carouselButtonSizeLarge;
-         //height: $carouselButtonSizeLarge;
-         //line-height: $carouselButtonSizeLarge;
-         &:before {
-           //width: $carouselButtonSizeLarge;
-           //height: $carouselButtonSizeLarge;
-           //line-height: $carouselButtonSizeLarge;
-         }
-       }
-     }
-     .slick-next {
-       top: calc(50% - 15px);
-       right: -($gutter/2);
-       z-index: 1;
-       &:before {
-         border: 2px solid $white;
-       }
-       @include bp(large, up) {
-         top: calc(50% - 20px);
-         //right: $gutter;
-         //width: $carouselButtonSizeLarge;
-         //height: $carouselButtonSizeLarge;
-         //line-height: $carouselButtonSizeLarge;
-         &:before {
-           //width: $carouselButtonSizeLarge;
-           //height: $carouselButtonSizeLarge;
-           //line-height: $carouselButtonSizeLarge;
-         }
-       }
-     }
-     .slick-disabled {
-       &:before {
-         // uncomment if going for totally hidden disabled arrow
-         //border: none !important;
-       }
-     }
-   }
-   &.fouc { // class applied on view
-     visibility: hidden;
-   }
- }
+    .slick-prev {
+      top: calc(50% - 15px);
+      left: -($gutter/2);
+      z-index: 1;
+      &:before {
+        border: 2px solid $white;
+      }
+      @include bp(large, up) {
+        top: calc(50% - 20px);
+        //left: $gutter;
+        //width: $carouselButtonSizeLarge;
+        //height: $carouselButtonSizeLarge;
+        //line-height: $carouselButtonSizeLarge;
+        &:before {
+          //width: $carouselButtonSizeLarge;
+          //height: $carouselButtonSizeLarge;
+          //line-height: $carouselButtonSizeLarge;
+        }
+      }
+    }
+    .slick-next {
+      top: calc(50% - 15px);
+      right: -($gutter/2);
+      z-index: 1;
+      &:before {
+        border: 2px solid $white;
+      }
+      @include bp(large, up) {
+        top: calc(50% - 20px);
+        //right: $gutter;
+        //width: $carouselButtonSizeLarge;
+        //height: $carouselButtonSizeLarge;
+        //line-height: $carouselButtonSizeLarge;
+        &:before {
+          //width: $carouselButtonSizeLarge;
+          //height: $carouselButtonSizeLarge;
+          //line-height: $carouselButtonSizeLarge;
+        }
+      }
+    }
+    .slick-disabled {
+      &:before {
+        // uncomment if going for totally hidden disabled arrow
+        //border: none !important;
+      }
+    }
+  }
+  &.fouc { // class applied on view
+    visibility: hidden;
+  }
+}
 
-.section--type-card-deck {
+.component--type-card-deck {
   .slick-slider {
     margin: 0 $gutter*2;
     .slick-list {

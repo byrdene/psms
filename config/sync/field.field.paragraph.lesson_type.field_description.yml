@@ -1,0 +1,27 @@
+uuid: af9ff3f3-68d9-4c25-bfcd-e81f3c5647e5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_description
+    - paragraphs.paragraphs_type.lesson_type
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    full_html: full_html
+    basic_html: '0'
+    plain_text: '0'
+id: paragraph.lesson_type.field_description
+field_name: field_description
+entity_type: paragraph
+bundle: lesson_type
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

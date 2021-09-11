@@ -31,7 +31,13 @@
         {% endif %}
       </div>
     {% if content.field_welcome_photos|render %}
-      <div class="welcome-photo-wrapper">{{ content.field_welcome_photos }}</div>
+
+      {% set num = content.field_welcome_photos['#items']|length %}
+      {% set cap = num - 1 %}
+      {% set random = random(cap) %}
+      {% set photo = content.field_welcome_photos[random] %}
+
+      <div class="welcome-photo-wrapper">{{ photo }}</div>
     {% endif %}
   </section>
 

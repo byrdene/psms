@@ -1,0 +1,19 @@
+uuid: f4c86868-a575-4739-a937-1b0491aa784b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_custom_class
+    - paragraphs.paragraphs_type.lesson_type
+id: paragraph.lesson_type.field_custom_class
+field_name: field_custom_class
+entity_type: paragraph
+bundle: lesson_type
+label: 'Custom Class(es)'
+description: 'Separate multiple class names with a single space. E.g. class1 class2 class3'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -7,6 +7,7 @@ dependencies:
     - node.type.page
     - paragraphs.paragraphs_type.calendar_intro
     - paragraphs.paragraphs_type.instructors
+    - paragraphs.paragraphs_type.lesson_type
     - paragraphs.paragraphs_type.rich_text
     - paragraphs.paragraphs_type.testimonials
   module:
@@ -30,17 +31,27 @@ settings:
       calendar_intro: calendar_intro
       instructors: instructors
       testimonials: testimonials
+      lesson_type: lesson_type
     target_bundles_drag_drop:
       calendar_intro:
         enabled: true
         weight: 3
+      gallery_slider:
+        weight: 8
+        enabled: false
       instructors:
         enabled: true
         weight: 6
+      lesson_type:
+        enabled: true
+        weight: 11
       rich_text:
         enabled: true
         weight: 2
       testimonials:
         enabled: true
         weight: 8
+      two_columns:
+        weight: 12
+        enabled: false
 field_type: entity_reference_revisions

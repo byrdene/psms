@@ -1,0 +1,23 @@
+uuid: 1ed36c31-4e4b-4e42-a622-5bb675b7fb72
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_lesson_buttons
+    - paragraphs.paragraphs_type.lesson_type
+  module:
+    - link
+id: paragraph.lesson_type.field_lesson_buttons
+field_name: field_lesson_buttons
+entity_type: paragraph
+bundle: lesson_type
+label: Button(s)
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

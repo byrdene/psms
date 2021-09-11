@@ -1,26 +1,50 @@
 header {
-  .menu--main {
-    margin-top: 10px;
+  .region-navigation-primary {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 0;
     @include bp($main-nav, up) {
-      ul.menu {
-        li {
-          padding: 50px 0;
-          text-align: center;
-          width: 160px;
-          background-color: $black;
-          border-radius: 50%;
-          position: relative;
-          margin-right: -20px;
-          a {
-            color: $white;
-            text-decoration: none;
-            z-index: 1;
-            position: absolute;
-            left: 0;
-            top: 17px;
-            width: 100%;
-            &:hover {
-              text-decoration: underline;
+      position: relative;
+      width: auto;
+    }
+  }
+  .hamburger-navigation {
+    display: block;
+    width: 100%;
+    z-index: 1;
+    @include bp($main-nav, up) {
+      display: none;
+    }
+  }
+  .full-display-navigation {
+    display: none;
+    @include bp($main-nav, up) {
+      display: block;
+      .menu--main {
+        margin-top: 10px;
+        ul.menu {
+          li {
+            padding: 50px 0;
+            text-align: center;
+            width: 160px;
+            background-color: $black;
+            border-radius: 50%;
+            position: relative;
+            margin-right: -20px;
+            a {
+              color: $white;
+              text-decoration: none;
+              z-index: 1;
+              position: absolute;
+              left: 0;
+              top: 17px;
+              width: 100%;
+              &:hover {
+                text-decoration: underline;
+              }
             }
           }
         }

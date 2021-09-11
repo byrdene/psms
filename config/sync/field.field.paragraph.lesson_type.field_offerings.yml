@@ -1,0 +1,51 @@
+uuid: a591cdda-532e-4188-b4c7-d5b09fea9d14
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_offerings
+    - paragraphs.paragraphs_type.lesson_type
+  module:
+    - viewfield
+id: paragraph.lesson_type.field_offerings
+field_name: field_offerings
+entity_type: paragraph
+bundle: lesson_type
+label: Offerings
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  force_default: false
+  allowed_views:
+    group_class_list: group_class_list
+    private_lesson_list: private_lesson_list
+    content: '0'
+    block_content: '0'
+    event_listing: '0'
+    files: '0'
+    frontpage: '0'
+    general_highlights_slider: '0'
+    instructors: '0'
+    media: '0'
+    media_library: '0'
+    moderated_content: '0'
+    user_admin_people: '0'
+    content_recent: '0'
+    redirect: '0'
+    taxonomy_term: '0'
+    testimonials: '0'
+    watchdog: '0'
+    welcome_photos: '0'
+    who_s_new: '0'
+    who_s_online: '0'
+  allowed_display_types:
+    block: block
+    default: '0'
+    feed: '0'
+    page: '0'
+  handler: 'default:view'
+  handler_settings: {  }
+field_type: viewfield

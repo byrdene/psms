@@ -1,18 +1,18 @@
-uuid: 20cb175b-be89-4d65-82ff-d8099a6697a6
+uuid: 5fdd6696-af3f-485a-b4d7-9e17dcbe6d8e
 langcode: en
 status: true
 dependencies:
   module:
+    - entity_reference_revisions
     - node
-    - viewfield
-    - views
+    - paragraphs
 id: node.field_photo_gallery
 field_name: field_photo_gallery
 entity_type: node
-type: viewfield
+type: entity_reference_revisions
 settings:
-  target_type: view
-module: viewfield
+  target_type: paragraph
+module: entity_reference_revisions
 locked: false
 cardinality: 1
 translatable: true

@@ -1,0 +1,12 @@
+uuid: 82fb47a2-ba8b-4cef-9568-656c0bde5140
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: V8_w1PWQX4tUpsDs0uRXKeX3g9N4W4J4nFLRLgq4RpM
+id: gallery_slider
+label: 'Gallery Slider'
+icon_uuid: null
+icon_default: null
+description: 'A slider of  thumbnail images (well-suited for Colorbox type functionality)'
+behavior_plugins: {  }

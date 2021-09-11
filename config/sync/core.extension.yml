@@ -72,6 +72,7 @@ module:
   node: 0
   options: 0
   page_cache: 0
+  paragraph_gallery_slider: 0
   paragraph_text_block: 0
   paragraphs_type_permissions: 0
   path: 0

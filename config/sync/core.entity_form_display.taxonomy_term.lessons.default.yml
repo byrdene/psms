@@ -10,6 +10,13 @@ targetEntityType: taxonomy_term
 bundle: lessons
 mode: default
 content:
+  field_inactive:
+    type: boolean_checkbox
+    weight: 1
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   name:
     type: string_textfield
     weight: 0
@@ -20,6 +27,5 @@ content:
     third_party_settings: {  }
 hidden:
   description: true
-  field_inactive: true
   path: true
   status: true

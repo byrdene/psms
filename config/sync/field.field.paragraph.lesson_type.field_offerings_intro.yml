@@ -1,0 +1,27 @@
+uuid: 6c5ffcff-d3a9-4061-a009-fa569a9fc721
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_offerings_intro
+    - paragraphs.paragraphs_type.lesson_type
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    basic_html: basic_html
+    full_html: '0'
+    plain_text: '0'
+id: paragraph.lesson_type.field_offerings_intro
+field_name: field_offerings_intro
+entity_type: paragraph
+bundle: lesson_type
+label: 'Intro to Offerings'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,21 @@
+uuid: a5d53472-da86-404a-a356-edcba5a80619
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_heading
+    - paragraphs.paragraphs_type.gallery_slider
+_core:
+  default_config_hash: yxCtCN2dpAxxWGQTnJifVXNW0cwRIja8YepSR3qL39o
+id: paragraph.gallery_slider.field_heading
+field_name: field_heading
+entity_type: paragraph
+bundle: gallery_slider
+label: Heading
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

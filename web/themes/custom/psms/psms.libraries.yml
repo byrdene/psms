@@ -14,8 +14,7 @@ global:
       dist/css/print.css: { media: print }
   # Each discreet feature or function should be in a unique js file.
   js:
-    dist/js/custom/psms-mobile-menu-v1.js: {}
-    dist/js/custom/psms-search.js: {}
+    dist/js/custom/hamburger-menu.js: {}
     dist/js/custom/psms-accordions.js: {}
 #    dist/js/contrib/datatables.js: {}
 #    dist/js/custom/psms-responsiveTables.js: {}

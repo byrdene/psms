@@ -1,0 +1,33 @@
+uuid: 680af752-74c3-45ba-9f72-b880a0546700
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.lesson_type.field_custom_class
+    - field.field.paragraph.lesson_type.field_description
+    - field.field.paragraph.lesson_type.field_heading
+    - field.field.paragraph.lesson_type.field_lesson_buttons
+    - field.field.paragraph.lesson_type.field_offerings
+    - field.field.paragraph.lesson_type.field_offerings_intro
+    - paragraphs.paragraphs_type.lesson_type
+id: paragraph.lesson_type.preview
+targetEntityType: paragraph
+bundle: lesson_type
+mode: preview
+content:
+  field_heading:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  field_custom_class: true
+  field_description: true
+  field_lesson_buttons: true
+  field_offerings: true
+  field_offerings_intro: true
+  search_api_excerpt: true

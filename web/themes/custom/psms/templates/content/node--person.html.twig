@@ -5,11 +5,12 @@
   view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
 ] %}
 
-<div class="page-title-wrapper background">
-  <div class="page-title-content container page-width padded-row">
-    <div class="page-title-background">
-      <h1 class="page-title">{{ node.label }}</h1>
-      <div class="centered large-text"><strong>{{ content.field_specialties }}</strong></div>
+<div class="page-title-outer-wrapper container page-width padded-row">
+  <div class="page-title-wrapper container background">
+    <div class="page-title-content container page-width padded-row">
+      <div class="page-title-background">
+        <h1 class="page-title">{{ node.label }}</h1>
+      </div>
     </div>
   </div>
 </div>
@@ -34,6 +35,10 @@
   {% if content.field_personal_statement|render %}
     <div class="statement-wrapper">{{ content.field_personal_statement }}</div>
   {% endif %}
+
+      <div class="back-wrapper container padded-column centered">
+        <a href="/node/1" class="button">Back to The Studio</a>
+      </div>
 
 </section>
 

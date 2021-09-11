@@ -1,0 +1,23 @@
+uuid: a54d0ef7-7a21-4a83-8d88-e562963af70f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_portal_links
+    - node.type.homepage
+  module:
+    - link
+id: node.homepage.field_portal_links
+field_name: field_portal_links
+entity_type: node
+bundle: homepage
+label: 'Portal Links'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 2
+field_type: link

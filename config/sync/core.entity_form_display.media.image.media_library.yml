@@ -25,6 +25,14 @@ content:
       progress_indicator: throbber
       preview_image_style: thumbnail
     third_party_settings: {  }
+  field_short_caption:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   name:
     type: string_textfield
     weight: 0
@@ -36,7 +44,6 @@ content:
 hidden:
   created: true
   field_general_highlights_slider: true
-  field_short_caption: true
   field_welcome_photo: true
   path: true
   status: true

@@ -1,0 +1,19 @@
+uuid: 4b2cf7d4-12d7-409d-8fae-f67b14016326
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - paragraphs
+id: paragraph.field_lesson_buttons
+field_name: field_lesson_buttons
+entity_type: paragraph
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 2
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

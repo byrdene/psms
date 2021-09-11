@@ -1,0 +1,66 @@
+{# Default classes if no values exist in styling fields #}
+
+{% set custom_class = '' %}
+
+{# Apply classes based on field values if the field exists and it has a value #}
+
+{% if not (paragraph.field_custom_class.isEmpty == true) and paragraph.field_custom_class is defined %}
+  {% set custom_class = paragraph.field_custom_class.value %}
+{% endif %}
+
+
+{%
+  set classes = [
+  'component',
+  'component--type-' ~ paragraph.bundle|clean_class,
+  'component-paragraph',
+  'container',
+  'medium-width',
+  'padded-row',
+  custom_class,
+]
+%}
+
+<section{{ attributes.addClass(classes) }}>
+  <div class="component-wrapper">
+    <div class="component-content">
+      {{ title_suffix }}
+
+      <div class="main-content-wrapper">
+
+        {% if content.field_heading %}
+          <div class="heading-wrapper">
+            {{ content.field_heading }}
+          </div>
+        {% endif %}
+
+        <div class="description-wrapper">
+          {{ content.field_description }}
+        </div>
+
+      </div>
+
+      <div class="main-content-wrapper">
+        {% if content.field_offerings_intro %}
+          <div class="offerings-intro-wrapper">
+            {{ content.field_offerings_intro }}
+          </div>
+        {% endif %}
+
+        <div class="offerings-wrapper">
+          {{ content.field_offerings }}
+        </div>
+        
+        {% if content.field_lesson_buttons %}
+          <div class="buttons-wrapper">
+            {{ content.field_lesson_buttons }}
+          </div>
+        {% endif %}
+
+      </div>
+
+
+
+    </div>
+  </div>
+</section>

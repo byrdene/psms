@@ -1,0 +1,31 @@
+uuid: 097ae48f-e0a0-43af-8b5e-f60bdde50e65
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_gallery_images
+    - media.type.image
+    - paragraphs.paragraphs_type.gallery_slider
+_core:
+  default_config_hash: mHFOxWO7dMKfWbAxJcCn76yB3PY9JQjs1A8OGJuVK-s
+id: paragraph.gallery_slider.field_gallery_images
+field_name: field_gallery_images
+entity_type: paragraph
+bundle: gallery_slider
+label: 'Gallery Images'
+description: 'After adding photos, drag them around to order the photos in the gallery slider.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

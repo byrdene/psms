@@ -1,20 +1,19 @@
-uuid: 38f64164-cc0b-4cf2-ba48-0cb38ad2efdd
+uuid: a925bc75-9992-420b-ac13-edda3cb10fa3
 langcode: en
 status: true
 dependencies:
   module:
+    - media
     - node
-    - viewfield
-    - views
 id: node.field_welcome_photos
 field_name: field_welcome_photos
 entity_type: node
-type: viewfield
+type: entity_reference
 settings:
-  target_type: view
-module: viewfield
+  target_type: media
+module: core
 locked: false
-cardinality: 1
+cardinality: -1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

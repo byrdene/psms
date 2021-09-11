@@ -1,44 +1,43 @@
-uuid: 070a313e-b09e-4f8f-86aa-9b3a7b971056
+uuid: 70ea46e4-4bad-43f0-9b18-4bf1760b4b32
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_photo_gallery
     - node.type.homepage
+    - paragraphs.paragraphs_type.gallery_slider
   module:
-    - viewfield
+    - entity_reference_revisions
 id: node.homepage.field_photo_gallery
 field_name: field_photo_gallery
 entity_type: node
 bundle: homepage
-label: 'Photo Gallery'
+label: 'Photo Gallery with Lightbox'
 description: ''
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  force_default: false
-  allowed_views:
-    content: '0'
-    block_content: '0'
-    files: '0'
-    frontpage: '0'
-    media: '0'
-    media_library: '0'
-    moderated_content: '0'
-    user_admin_people: '0'
-    content_recent: '0'
-    redirect: '0'
-    taxonomy_term: '0'
-    watchdog: '0'
-    who_s_new: '0'
-    who_s_online: '0'
-  allowed_display_types:
-    block: block
-    default: '0'
-    feed: '0'
-    page: '0'
-  handler: 'default:view'
-  handler_settings: {  }
-field_type: viewfield
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      gallery_slider: gallery_slider
+    target_bundles_drag_drop:
+      calendar_intro:
+        weight: 6
+        enabled: false
+      gallery_slider:
+        enabled: true
+        weight: 10
+      instructors:
+        weight: 7
+        enabled: false
+      rich_text:
+        weight: 8
+        enabled: false
+      testimonials:
+        weight: 9
+        enabled: false
+field_type: entity_reference_revisions

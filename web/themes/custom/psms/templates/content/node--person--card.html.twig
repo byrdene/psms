@@ -10,6 +10,8 @@
     <div class="image-wrapper">
       {% if content.field_main_image|render %}
       {{ content.field_main_image }}
+      {% else %}
+        {{ drupal_image('public://images/person-sillouette.png', 'square', responsive=true) }}
       {% endif %}
     </div>
     <div class="text-wrapper">
