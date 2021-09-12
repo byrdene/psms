@@ -516,9 +516,13 @@ body.path-user {
     @include font-weight(bold);
     font-style: italic;
     color: $primary-color;
-    margin: rem($vertical-spacing) 0 rem($vertical-spacing) $gutter*2;
+    margin: rem($vertical-spacing) 0 rem($vertical-spacing) 0;
     padding: 0 $gutter*2;
     border-left: 4px solid $gold;
+    @include bp(large, up) {
+      margin-left: $gutter*2;
+      margin-right: $gutter*2;
+    }
   }
 
   &.node--view-mode-card {
