@@ -472,6 +472,12 @@ body.path-user {
 }
 
 // Person
+.node-type-person { // page, not node
+  .specialties-wrapper {
+    @include font-weight(bold);
+    @include font-size(16px);
+  }
+}
 .node--type-person {
   &.has-photo {
     .image-wrapper {

@@ -10,6 +10,9 @@
     <div class="page-title-content container page-width padded-row">
       <div class="page-title-background">
         <h1 class="page-title">{{ node.label }}</h1>
+        {% if content.field_specialties|render %}
+          <div class="specialties-wrapper">{{ content.field_specialties }}</div>
+        {% endif %}
       </div>
     </div>
   </div>
