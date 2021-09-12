@@ -21,6 +21,7 @@ header {
   }
   .full-display-navigation {
     display: none;
+    overflow-x: hidden;
     @include bp($main-nav, up) {
       display: block;
       .menu--main {

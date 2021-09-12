@@ -70,6 +70,7 @@
 }
 
 @mixin quote {
+  overflow-x: hidden;
   @include font-size(24px);
   position: relative;
   line-height: 30px;
