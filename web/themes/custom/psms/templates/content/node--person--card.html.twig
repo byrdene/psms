@@ -5,7 +5,7 @@
   view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
 ] %}
 
-<div {{ attributes.addClass(classes, 'person-wrapper container')}}>
+<div {{ attributes.addClass(classes, 'person-wrapper container')}} data-aos="zoom-in-up">
   <div class="person-content">
     <div class="image-wrapper">
       {% if content.field_main_image|render %}

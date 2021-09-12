@@ -1,7 +1,7 @@
-name: Tofu
+name: PSMS
 type: theme
 base theme: false
-description: 'Theory One Design D8 base theme.'
+description: 'Pleasant Street Music Studio base theme.'
 package: Core
 core_version_requirement: ^8.8.0 || ^9.0
 
@@ -10,8 +10,6 @@ libraries:
   - psms/tabs #part of admin interface
   - psms/messages #part of admin interface
   - psms/fonts
-  - psms/a11y-hide-show
-#  - psms/slick
 
 # Uncomment to override unnecessary js libraries. Example below:
 #libraries-override:

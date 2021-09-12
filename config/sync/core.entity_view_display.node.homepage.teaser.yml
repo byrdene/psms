@@ -10,12 +10,12 @@ dependencies:
     - field.field.node.homepage.field_featured_testimonial
     - field.field.node.homepage.field_gallery_caption
     - field.field.node.homepage.field_photo_gallery
-    - field.field.node.homepage.field_portal_links
     - field.field.node.homepage.field_quicklinks
     - field.field.node.homepage.field_section_heading_community
     - field.field.node.homepage.field_section_heading_highlights
     - field.field.node.homepage.field_section_heading_welcome
     - field.field.node.homepage.field_upcoming_events
+    - field.field.node.homepage.field_welcome_links
     - field.field.node.homepage.field_welcome_photos
     - node.type.homepage
   module:
@@ -45,11 +45,11 @@ hidden:
   field_featured_testimonial: true
   field_gallery_caption: true
   field_photo_gallery: true
-  field_portal_links: true
   field_quicklinks: true
   field_section_heading_community: true
   field_section_heading_highlights: true
   field_section_heading_welcome: true
   field_upcoming_events: true
+  field_welcome_links: true
   field_welcome_photos: true
   search_api_excerpt: true

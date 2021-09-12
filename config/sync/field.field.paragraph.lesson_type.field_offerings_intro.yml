@@ -10,8 +10,8 @@ dependencies:
     - text
 third_party_settings:
   allowed_formats:
-    basic_html: basic_html
-    full_html: '0'
+    full_html: full_html
+    basic_html: '0'
     plain_text: '0'
 id: paragraph.lesson_type.field_offerings_intro
 field_name: field_offerings_intro

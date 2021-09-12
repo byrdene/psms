@@ -18,9 +18,7 @@ matchers:
       metadata: '[node:title] Updated: [node:changed:short_month_day_year_no_time]'
       bundles:
         article: article
-        event: event
         page: page
-        person: person
       group_by_bundle: true
       include_unpublished: true
       substitution_type: canonical

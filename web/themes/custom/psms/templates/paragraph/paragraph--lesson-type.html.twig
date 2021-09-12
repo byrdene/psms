@@ -26,13 +26,13 @@
     <div class="component-content">
       {{ title_suffix }}
 
-      <div class="main-content-wrapper">
+      {% if content.field_heading %}
+        <div class="heading-wrapper">
+          {{ content.field_heading }}
+        </div>
+      {% endif %}
 
-        {% if content.field_heading %}
-          <div class="heading-wrapper">
-            {{ content.field_heading }}
-          </div>
-        {% endif %}
+      <div class="column main-content-wrapper" data-aos="fade-up">
 
         <div class="description-wrapper">
           {{ content.field_description }}
@@ -40,19 +40,19 @@
 
       </div>
 
-      <div class="main-content-wrapper">
+      <div class="column sidebar-wrapper blue-box" data-aos="fade-right">
         {% if content.field_offerings_intro %}
-          <div class="offerings-intro-wrapper">
+          <div class="col-item offerings-intro-wrapper">
             {{ content.field_offerings_intro }}
           </div>
         {% endif %}
 
-        <div class="offerings-wrapper">
+        <div class="col-item offerings-wrapper">
           {{ content.field_offerings }}
         </div>
-        
+
         {% if content.field_lesson_buttons %}
-          <div class="buttons-wrapper">
+          <div class="col-item buttons-wrapper">
             {{ content.field_lesson_buttons }}
           </div>
         {% endif %}

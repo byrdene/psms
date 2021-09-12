@@ -21,12 +21,12 @@
   {% else %}
     <section class="section welcome-section container small-width padded-row">
   {% endif %}
-      <div class="welcome-text-wrapper">
+      <div class="welcome-text-wrapper" data-aos="fade-up">
         <h2 class="home-heading primary-color">{{ content.field_section_heading_welcome.0 }}</h2>
-        {{ content.body }}
-        {% if content.field_quicklinks|render %}
-          <div class="quicklinks-wrapper">
-          {{ content.field_quicklinks }}
+        <div class="large-text">{{ content.body }}</div>
+        {% if content.field_welcome_links|render %}
+          <div class="welcome-links-wrapper large-text">
+          {{ content.field_welcome_links }}
           </div>
         {% endif %}
       </div>
@@ -37,34 +37,29 @@
       {% set random = random(cap) %}
       {% set photo = content.field_welcome_photos[random] %}
 
-      <div class="welcome-photo-wrapper">{{ photo }}</div>
+      <div class="welcome-photo-wrapper" data-aos="fade-left">{{ photo }}</div>
     {% endif %}
   </section>
 
   {#  Community section #}
-    {% if content.field_featured_article|render or content.field_upcoming_events|render %}
-      <section class="section community-section container small-width padded-row">
-        <h2 class="home-heading secondary-color">{{ content.field_section_heading_community.0 }}</h2>
-        {% if content.field_featured_article|render %}
-          <div class="article-wrapper container small-width">{{ content.field_featured_article }}</div>
-        {% endif %}
-        {% if content.field_upcoming_events|render %}
-          <div class="events-wrapper">{{ content.field_upcoming_events }}</div>
-        {% endif %}
-      </section>
-    {% endif %}
-
-      {% if content.field_featured_article|render and content.field_upcoming_events|render %}
-        <section class="section community-section container page-width padded-row">
-          <h2 class="home-heading secondary-color">{{ content.field_section_heading_community.0 }}</h2>
-          {% if content.field_featured_article|render %}
-            <div class="article-wrapper container small-width">{{ content.field_featured_article }}</div>
-          {% endif %}
-          {% if content.field_upcoming_events|render %}
-            <div class="events-wrapper">{{ content.field_upcoming_events }}</div>
-          {% endif %}
-        </section>
+  <section class="section community-section container medium-width padded-row">
+    <div class="community-section-outer-wrapper container">
+      <h2 class="home-heading secondary-color">{{ content.field_section_heading_community.0 }}</h2>
+      <div class="community-section-wrapper container">
+      {% if content.field_quicklinks|render %}
+        <div class="quicklinks-wrapper blue-box" data-aos="fade-right">
+          <div class="quicklinks-heading"><h3>Quicklinks</h3></div>
+          {{ content.field_quicklinks }}
+        </div>
       {% endif %}
+      {% if content.field_upcoming_events|render %}
+        <div class="events-wrapper">
+          <div class="events-heading"><h3>Upcoming Events</h3></div>
+          {{ content.field_upcoming_events }}</div>
+      {% endif %}
+      </div>
+    </div>
+  </section>
 
   {#  Highlights section #}
   {% if content.field_photo_gallery|render %}

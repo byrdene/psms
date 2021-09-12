@@ -190,7 +190,7 @@ display:
           empty: false
           tokenize: false
           content:
-            value: '<a href="/calendar" class="button">All Events</a>'
+            value: '<a href="/calendar" class="button">All Studio Events</a>'
             format: full_html
           plugin_id: text
       empty:

@@ -9,12 +9,12 @@ dependencies:
     - field.field.node.homepage.field_featured_testimonial
     - field.field.node.homepage.field_gallery_caption
     - field.field.node.homepage.field_photo_gallery
-    - field.field.node.homepage.field_portal_links
     - field.field.node.homepage.field_quicklinks
     - field.field.node.homepage.field_section_heading_community
     - field.field.node.homepage.field_section_heading_highlights
     - field.field.node.homepage.field_section_heading_welcome
     - field.field.node.homepage.field_upcoming_events
+    - field.field.node.homepage.field_welcome_links
     - field.field.node.homepage.field_welcome_photos
     - node.type.homepage
   module:
@@ -47,7 +47,7 @@ third_party_settings:
         - field_section_heading_welcome
         - field_welcome_photos
         - body
-        - field_quicklinks
+        - field_welcome_links
       parent_name: ''
       weight: 2
       format_type: details
@@ -63,8 +63,8 @@ third_party_settings:
     group_community_section:
       children:
         - field_section_heading_community
+        - field_quicklinks
         - field_portal_links
-        - field_featured_article
         - field_upcoming_events
       parent_name: ''
       weight: 3
@@ -138,12 +138,6 @@ content:
         hide_guidelines: '1'
     type: text_textarea
     region: content
-  field_featured_article:
-    weight: 6
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
-    region: content
   field_featured_testimonial:
     weight: 7
     settings: {  }
@@ -169,16 +163,8 @@ content:
         duplicate: '0'
     third_party_settings: {  }
     region: content
-  field_portal_links:
-    weight: 5
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
-    third_party_settings: {  }
-    type: link_default
-    region: content
   field_quicklinks:
-    weight: 9
+    weight: 5
     settings:
       placeholder_url: ''
       placeholder_title: ''
@@ -210,10 +196,18 @@ content:
     type: string_textfield
     region: content
   field_upcoming_events:
-    weight: 7
+    weight: 8
     settings: {  }
     third_party_settings: {  }
     type: viewfield_select
+    region: content
+  field_welcome_links:
+    weight: 9
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
     region: content
   field_welcome_photos:
     type: media_library_widget
@@ -239,6 +233,7 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
+  field_featured_article: true
   field_gallery_caption: true
   path: true
   promote: true

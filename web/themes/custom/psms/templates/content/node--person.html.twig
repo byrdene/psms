@@ -24,16 +24,16 @@
   {% endif %}
       <div class="main-content-wrapper">
         {% if content.field_main_image|render %}
-          <div class="image-wrapper">{{ content.field_main_image }}</div>
+          <div class="image-wrapper" data-aos="fade-left">{{ content.field_main_image }}</div>
         {% endif %}
-        <div class="body-wrapper rte">{{ content.body }}</div>
+        <div class="body-wrapper rte" data-aos="fade-up">{{ content.body }}</div>
       </div>
 
   {% if content.field_person_statement_intro|render %}
     <div class="statement-intro-wrapper"><h2>{{ content.field_person_statement_intro.0 }}</h2></div>
   {% endif %}
   {% if content.field_personal_statement|render %}
-    <div class="statement-wrapper">{{ content.field_personal_statement }}</div>
+    <div class="statement-wrapper" data-aos="zoom-out-up">{{ content.field_personal_statement }}</div>
   {% endif %}
 
       <div class="back-wrapper container padded-column centered">
