@@ -16,9 +16,19 @@ header {
       margin-top: -65px;
     }
     .header-background-wrapper {
+      min-height: 150px;
+      background-image: url("../../static/images/header-bg.png");
+      background-size: cover;
       img {
         max-width: none;
         width: 100%;
+        opacity: 0;
+      }
+      @include bp(small, up) {
+        min-height: unset;
+        img {
+          opacity: 1;
+        }
       }
     }
     .logo-wrapper {
@@ -33,7 +43,7 @@ header {
         display: inline-block;
         padding: 10px 40px;
         z-index: 1;
-        width: 200px;
+        width: 260px;
         &:before {
           position: absolute;
           top: 0;

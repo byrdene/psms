@@ -263,6 +263,7 @@ body.path-user {
   // Homepage
   .news-section {
     .news-wrapper {
+      margin-top: $gutter/2;
       background-color: $gold-medium;
       border: 4px solid $gold;
       @include border-radius(6px);
@@ -270,6 +271,7 @@ body.path-user {
       position: relative;
       min-height: 110px;
       .news-heading {
+        display: none;
         position: absolute;
         bottom: 0;
         right: $gutter/2;
@@ -307,6 +309,12 @@ body.path-user {
               margin-top: $gutter/2;
             }
           }
+        }
+      }
+      @include bp(medium, up) {
+        margin-top: 0;
+        .news-heading {
+          display: block;
         }
       }
     }
