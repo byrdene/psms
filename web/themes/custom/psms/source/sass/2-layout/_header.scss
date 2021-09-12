@@ -17,6 +17,7 @@ header {
     }
     .header-background-wrapper {
       min-height: 150px;
+      background-color: $primary-color;
       background-image: url("../../static/images/header-bg.png");
       background-size: cover;
       img {
