@@ -26,7 +26,6 @@ header {
         opacity: 0;
       }
       @include bp(small, up) {
-        min-height: unset;
         img {
           opacity: 1;
         }
@@ -78,12 +77,11 @@ header {
         }
       }
       @include bp(large, up) {
-        .logo {
-          width: 450px;
-        }
+        .logo {}
       }
       @include bp(x-large, up) {
         .logo {
+          width: 450px;
           margin-top: 40px;
         }
       }
