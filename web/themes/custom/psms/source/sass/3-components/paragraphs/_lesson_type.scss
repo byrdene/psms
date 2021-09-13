@@ -33,12 +33,14 @@
     .column {
       & + .column {
         margin-top: 0;
-        margin-left: 4%;
+      }
+      &.main-content-wrapper {
+        padding-right: $gutter*2;
       }
     }
     .column {
       float: left;
-      width: 46%;
+      width: 50%;
     }
   }
 }

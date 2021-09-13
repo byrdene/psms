@@ -87,5 +87,8 @@ header {
       }
     }
   }
+  @include bp($main-nav, up) {
+    overflow-x: hidden;
+  }
 }
 
