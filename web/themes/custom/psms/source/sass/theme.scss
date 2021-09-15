@@ -326,7 +326,7 @@ body.path-user {
   }
   section {
     h2 {
-      @include font-size(36px);
+      @include font-size(30px);
       text-transform: uppercase;
       @include bp($main-nav, up) {
         @include font-size(40px);
@@ -376,10 +376,13 @@ body.path-user {
             h3 {
               text-transform: uppercase;
               color: rgba(255,255,255,.25);
-              font-size: 30px;
+              font-size: 24px;
               line-height: 1;
               margin: 0;
               padding: 0;
+              @include bp(medium, up) {
+                font-size: 30px;
+              }
             }
           }
           .quicklink-button {
@@ -395,10 +398,13 @@ body.path-user {
             h3 {
               text-transform: uppercase;
               color: $blue-medium;
-              font-size: 30px;
+              font-size: 24px;
               line-height: 1;
               margin: 0;
               padding: 0;
+              @include bp(medium, up) {
+                font-size: 30px;
+              }
             }
           }
         }
