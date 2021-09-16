@@ -84,6 +84,7 @@
         "drupal/paragraphs": "^1.12",
         "drupal/paragraphs_browser": "^1.0",
         "drupal/pathauto": "^1.8",
+        "drupal/publishcontent": "^1.4",
         "drupal/rabbit_hole": "^1.0@beta",
         "drupal/rebuild_cache_access": "^1.4",
         "drupal/redirect": "^1.6",
