@@ -787,8 +787,8 @@ $settings['entity_update_backup'] = TRUE;
 $settings['migrate_node_migrate_type_classic'] = FALSE;
 
 $databases['default']['default'] = array (
-  'database' => 'zaldomoh_psms',
-  'username' => 'zaldomoh_psms',
+  'database' => 'pleasan6_psms',
+  'username' => 'pleasan6_psms',
   'password' => 'PS+y,EvM[Or[',
   'prefix' => '',
   'host' => 'localhost',
