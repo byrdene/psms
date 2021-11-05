@@ -96,17 +96,20 @@ class SmartDateWidgetBase extends DateTimeWidgetBase {
       // TODO: more elegant way to handle hiding recurring instances?
       if ($allow_recurring && $items[$delta]->rrule) {
         $rrule = SmartDateRule::load($items[$delta]->rrule);
-        if ($rrule && isset($form['#rules_processed'][$items[$delta]->rrule])) {
-          // Not the first instance, so skip this delta.
-          $element['#access'] = FALSE;
-          return $element;
-        }
-        else {
-          // Keep track of this rule as having been processed.
-          $form['#rules_processed'][$items[$delta]->rrule] = $items[$delta]->rrule;
-          $items[$delta]->value = (int) $rrule->start->getString();
-          $items[$delta]->end_value = (int) $rrule->end->getString();
-          $items[$delta]->duration = ($items[$delta]->end_value - $items[$delta]->value) / 60;
+        // TODO: log nonexistent rrule values?
+        if ($rrule) {
+          if (isset($form['#rules_processed'][$items[$delta]->rrule])) {
+            // Not the first instance, so skip this delta.
+            $element['#access'] = FALSE;
+            return $element;
+          }
+          else {
+            // Keep track of this rule as having been processed.
+            $form['#rules_processed'][$items[$delta]->rrule] = $items[$delta]->rrule;
+            $items[$delta]->value = (int) $rrule->start->getString();
+            $items[$delta]->end_value = (int) $rrule->end->getString();
+            $items[$delta]->duration = ($items[$delta]->end_value - $items[$delta]->value) / 60;
+          }
         }
       }
       $defaults = $this->fieldDefinition->getDefaultValueLiteral()[0];
@@ -167,7 +170,7 @@ class SmartDateWidgetBase extends DateTimeWidgetBase {
     if (empty($defaults)) {
       $defaults = [
         'default_duration_increments' => "30\n60|1 hour\n90\n120|2 hours\ncustom",
-        'default_duration' => '60',
+        'default_duration' => 60,
       ];
     }
     // Wrap all of the select elements with a fieldset.
@@ -228,7 +231,7 @@ class SmartDateWidgetBase extends DateTimeWidgetBase {
       }
       else {
         // TODO: throw some kind of error/warning if invalid duration?
-        $default_duration = '';
+        $default_duration = 0;
       }
     }
     $element['duration'] = [
@@ -275,7 +278,7 @@ class SmartDateWidgetBase extends DateTimeWidgetBase {
       if (!empty($item['timezone'])) {
         $timezone = new \DateTimezone($item['timezone']);
       }
-      if (!empty($item['value']) && $item['value'] instanceof DrupalDateTime) {
+      if (!empty($item['value']) && $item['value'] instanceof DrupalDateTime && $item['end_value'] instanceof DrupalDateTime) {
         if (!$timezone) {
           $value_tz = $item['value']->getTimezone();
           $value_tz_name = $value_tz->getName();

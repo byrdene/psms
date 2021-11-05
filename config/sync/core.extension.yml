@@ -9,6 +9,9 @@ module:
   block_class: 0
   block_content: 0
   breakpoint: 0
+  chosen: 0
+  chosen_field: 0
+  chosen_lib: 0
   ckeditor: 0
   coffee: 0
   color: 0
@@ -60,6 +63,7 @@ module:
   link_attributes: 0
   linkit: 0
   media: 0
+  media_entity_download: 0
   media_library: 0
   menu_breadcrumb: 0
   menu_link_attributes: 0
@@ -99,6 +103,7 @@ module:
   token: 0
   toolbar: 0
   twig_tweak: 0
+  update: 0
   user: 0
   view_mode_selector: 0
   viewfield: 0

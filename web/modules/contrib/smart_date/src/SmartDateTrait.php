@@ -62,11 +62,21 @@ trait SmartDateTrait {
         $end_ts = $item->end_value;
       }
       elseif ($field_type == 'daterange') {
-        if (empty($item->start_date) || empty($item->end_date)) {
+        // Start and end dates are optional, but one of them is required
+        // to display anything regardless of what the field thinks.
+        if ($item->isEmpty() || (empty($item->start_date) && empty($item->end_date))) {
           continue;
         }
-        $start_ts = $item->start_date->getTimestamp();
-        $end_ts = $item->end_date->getTimestamp();
+        elseif (empty($item->start_date)) {
+          $start_ts = $end_ts = $item->end_date->getTimestamp();
+        }
+        elseif (empty($item->end_date)) {
+          $start_ts = $end_ts = $item->start_date->getTimestamp();
+        }
+        else {
+          $start_ts = $item->start_date->getTimestamp();
+          $end_ts = $item->end_date->getTimestamp();
+        }
       }
       elseif ($field_type == 'datetime') {
         if (empty($item->date)) {

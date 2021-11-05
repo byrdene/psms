@@ -554,7 +554,9 @@ function smart_date_recur_generate_rows(&$values, $entity_type, $bundle, $field_
       if (!empty($item['rrule'])) {
         // Removed an existing reoccurrence, so delete.
         $rrule = SmartDateRule::load($item['rrule']);
-        $rrule->delete();
+	if ($rrule) {
+          $rrule->delete();
+        }
         $item['rrule'] = NULL;
       }
       continue;

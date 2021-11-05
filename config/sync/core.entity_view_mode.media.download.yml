@@ -1,0 +1,10 @@
+uuid: 4299a320-a3f8-4268-a3ff-4cb4e3c66a5e
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.download
+label: Download
+targetEntityType: media
+cache: true
